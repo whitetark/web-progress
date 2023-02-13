@@ -9,7 +9,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   line-height: 1.8em;
@@ -24,15 +23,15 @@ section {
 }
 
 .img1 {
-  background-image: url(images/first.jpg);
+  background-image: url(assets/first.jpg);
   min-height: 100%;
 }
 .img2 {
-  background-image: url(images/second.jpg);
+  background-image: url(assets/second.jpg);
   min-height: 50%;
 }
 .img3 {
-  background-image: url(images/third.jpg);
+  background-image: url(assets/third.jpg);
   min-height: 50%;
 }
 

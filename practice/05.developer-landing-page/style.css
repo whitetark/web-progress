@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+
+  background-image: url(assets/background.jpg);
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.name {
+  color: white;
+  border: 3px solid #f1f1f1;
+  backdrop-filter: blur(8px) saturate(70%);
+  font-size: 2.6em;
+  padding: 5%;
+}
+
+.text {
+  text-align: center;
+  color: white;
+  background-color: #282e34;
+}
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(265px, 300px));
+  justify-content: center;
+  gap: 3rem;
+  background-color: aliceblue;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  transition: 0.3s;
+  margin: 20px 0px;
+}
+.card:hover {
+  box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
+  cursor: pointer;
+}
+
+.card-img {
+  overflow: hidden;
+}
+.card-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px 20px 0 0;
+}
+
+.card-info {
+  padding: 2rem;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: row;
+}
+.contact-me,
+.about-me {
+  width: 50%;
+  color: white;
+  padding: 16px;
+}
+.contact-me {
+  background-color: rgba(51, 82, 1, 0.842);
+}
+.about-me {
+  background-color: rgb(100, 0, 0);
+}
+
+@media only screen and (max-width: 1010px) {
+  .contacts {
+    flex-direction: column;
+  }
+  .contact-me,
+  .about-me {
+    width: 100%;
+  }
+  .works {
+    grid-template-columns: repeat(auto-fill, minmax(265px, 300px));
+  }
+}
