@@ -1,3 +1,0 @@
-1. Manually change size of offcanvas
-2. Make background of info with image
-3. Partners Block
