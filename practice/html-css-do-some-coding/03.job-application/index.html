@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="main">
+        <h1>Job Application<span>(Web)</span></h1>
+        <section class="first parent">
+          <div class="name child">
+            <label for="fname">First Name</label><br />
+            <input type="text" id="fname" name="fname" placeholder="Enter first name" /><br />
+          </div>
+          <div class="surname child">
+            <label for="sname">Second Name</label><br />
+            <input type="text" id="sname" name="sname" placeholder="Enter second name" /><br />
+          </div>
+        </section>
+        <section class="second parent">
+          <div class="email child">
+            <label for="iemail">Email</label><br />
+            <input type="text" id="iemail" name="iemail" placeholder="Enter email" /><br />
+          </div>
+          <div class="role child">
+            <label for="job">Job Role</label><br />
+            <select name="job" id="job">
+              <option value="webdev">Web Developer</option>
+              <option value="backdev">Back Developer</option>
+              <option value="datadev">Data Scientist</option>
+              <option value="gamedev">Game Developer</option>
+            </select>
+          </div>
+        </section>
+        <section class="third">
+          <label for="adress">Enter Address:</label><br />
+          <textarea
+            name="adress"
+            id="adress"
+            style="width: 100%; resize: none"
+            placeholder="Enter adress"
+          ></textarea>
+        </section>
+        <section class="fourth parent">
+          <div class="city child">
+            <label for="icity">City</label><br />
+            <input type="text" id="icity" name="icity" placeholder="Enter your city" /><br />
+          </div>
+          <div class="pincode child">
+            <label for="pin">Pincode</label><br />
+            <input type="text" id="pin" name="pin" placeholder="Enter your pincode" /><br />
+          </div>
+        </section>
+        <section class="fifth parent">
+          <div class="date child">
+            <label for="startdate">Start Date</label><br />
+            <input type="date" id="startdate" name="startdate" />
+          </div>
+          <div class="cv child">
+            <label for="file">Start Date</label><br />
+            <input type="file" id="file" name="file" />
+          </div>
+        </section>
+        <input type="submit" value="Apply Now" class="button" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+:root {
+  --black: #191414;
+  --green: #1db954;
+  --white: #f9f6ff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+section {
+  box-shadow: 1px 2px 3px 0 rgba(34, 34, 34, 0.486);
+}
+
+header {
+  background-color: var(--black);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 1px 2px 3px 0 rgba(34, 34, 34, 0.486);
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+}
+nav ul a {
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  color: var(--white);
+}
+nav ul a:hover {
+  border-bottom: 2px solid var(--white);
+  transition: 0.2s ease-in;
+}
+.logo {
+  font-size: 32px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.intro-section {
+  background-image: url(assets/intro-background.jpg);
+  color: var(--white);
+  height: 100vh;
+}
+.intro-section > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 150px;
+}
+.intro-section h1 {
+  font-size: 96px;
+}
+
+.music-section {
+  background-color: var(--green);
+  color: var(--white);
+}
+.music-section > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  padding: 25px 50px 150px;
+}
+i,span {
+  font-size: 32px;
+  padding: 7px;
+}
+.music-section button {
+  padding: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 5px;
+  border: 1px solid var(--black);
+}
+.ipad-iphone-img {
+  position: relative;
+  top: 400px;
+  margin-top: -400px;
+}
+.ipad-iphone-img img{
+    width: 100%;
+  }
+
+.about-section {
+  background-color: var(--white);
+}
+.about-section > .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 250px 50px 50px;
+  gap: 20px;
+}
+.about-section button {
+  padding: 10px;
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: 5px;
+  border: 1px solid var(--green);
+}
+button:hover {
+  opacity: 0.9;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.mac img {
+  max-width: 100%;
+  height: auto;
+}
+
+.video-section {
+  background-image: url(assets/video-background.jpg);
+  background-attachment: fixed;
+  color: var(--white);
+}
+.video-section > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 3px solid var(--white);
+  backdrop-filter: blur(10px) saturate(70%);
+  padding: 50px;
+  margin: 200px;
+}
+.video-section,
+.intro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.gift-section {
+  background-color: var(--white);
+}
+.gift-section > .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 100px 50px;
+}
+.gift-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.gift-section img {
+  height: 250px;
+}
+.divider {
+  border-bottom: 1px solid;
+}
+.gift-section button {
+  align-self: flex-start;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.upper-footer {
+  background-color: var(--green);
+  color: var(--white);
+}
+.upper-footer > .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 50px;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.upper-footer ul {
+  list-style-type: none;
+}
+.upper-footer li {
+  padding-bottom: 5px;
+}
+
+.lower-footer {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 25px;
+}
+
+@media only screen and (max-width: 960px){
+  .intro-section h1{
+    font-size: 56px;
+  }
+  .gift-section > .container{
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 730px){
+    .upper-footer > .container{
+    flex-direction: column;
+    gap: 25px;
+  }
+}
