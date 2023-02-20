@@ -20,6 +20,7 @@
 }
 body {
   font-family: 'Overpass', sans-serif;
+  line-height: 1.4;
 }
 p {
   font-size: var(--font-size);
@@ -53,6 +54,10 @@ p {
 
 #first {
   gap: 30px;
+  justify-content: space-between;
+}
+#first h1 {
+  font-size: 26px;
 }
 .star-icon img {
   background-color: var(--icon-dark);
@@ -63,7 +68,7 @@ p {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .rates {
