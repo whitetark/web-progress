@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --icon-dark: hsl(214, 19%, 24%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+
+  --font-size: 15px;
+  --first-weigth: 400;
+  --second-weigth: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Overpass', sans-serif;
+}
+p {
+  font-size: var(--font-size);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+
+#first,
+#second {
+  background-color: var(--dark-blue);
+  padding: 30px;
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#first p,
+#second p {
+  color: var(--light-grey);
+}
+
+#first {
+  gap: 30px;
+}
+.star-icon img {
+  background-color: var(--icon-dark);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.boxed {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.boxed label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  height: 49px;
+  background-color: var(--icon-dark);
+  color: var(--medium-grey);
+  border-radius: 30px;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+
+.boxed input[type='radio'] {
+  display: none;
+}
+.boxed input[type='radio']:checked + label {
+  background-color: var(--orange);
+  color: var(--white);
+}
+.boxed input[type='radio']:hover + label {
+  background-color: var(--medium-grey);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.boxed input[type='submit'] {
+  all: unset;
+  width: 100%;
+  background-color: var(--orange);
+  color: var(--white);
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px 0;
+}
+.boxed input[type='submit']:hover {
+  background-color: var(--white);
+  color: var(--orange);
+  cursor: pointer;
+}
+
+#second {
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+
+.illustration img {
+  width: 100%;
+  height: auto;
+}
+.selected {
+  background-color: var(--icon-dark);
+  color: var(--orange);
+  padding: 4px 20px;
+  border-radius: 25px;
+}
+#second .content {
+  text-align: center;
+}
+
+.attribution {
+  background-color: var(--dark-blue);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+.attribution a {
+  text-decoration: 0;
+  color: var(--medium-grey);
+}
