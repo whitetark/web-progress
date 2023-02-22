@@ -246,6 +246,7 @@ a {
   color: var(--text-light);
 }
 
+
 @media only screen and (max-width: 1127px) {
   .socials,
   .stats-items {
