@@ -37,16 +37,15 @@ function submitForm() {
       input.setAttribute('placeholder', '')
       label.innerHTML = `${input.alt} cannot be empty`
     } else {
-      if (input.name == 'email') {
-        if (!input.value.match(validRegex)) {
-          input.style.cssText = error
-          input.setAttribute('placeholder', '')
+      if (input.name == 'email' && !input.value.match(validRegex)) {
+        input.style.cssText = error
+        input.setAttribute('placeholder', '')
 
-          label.innerHTML = `Looks like this is not an email`
-          continue
-        }
+        label.innerHTML = `Looks like this is not an email`
+        continue
       }
       data.push({ name: input.name, value: input.value })
+      input.setAttribute('placeholder', `${input.alt}`)
     }
   }
 

@@ -6,7 +6,7 @@
   --neutral-dark-blue: hsl(249, 10%, 26%);
   --neutral-grayish-blue: hsl(246, 25%, 77%);
 
-  --font-size: 16px;
+  --font-size: 1.6rem;
 }
 
 * {
@@ -15,6 +15,9 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
 body {
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-size);
@@ -42,24 +45,28 @@ main {
   align-items: center;
 
   margin: 0 auto;
-  max-width: 1111px;
-  gap: 40px;
+  max-width: 111.1rem;
+  gap: 4rem;
 }
 .main-left {
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 2.5rem;
   width: 50%;
 }
 .main-left h1 {
-  font-size: 48px;
+  font-size: 4.8rem;
+  line-height: 1.1;
+}
+.main-left p {
+  line-height: 1.6;
 }
 
 .main-right {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 2.5rem;
   width: 50%;
 }
 .right-text {
@@ -67,7 +74,7 @@ main {
   color: white;
   text-align: center;
   width: 100%;
-  padding: 18px 0;
+  padding: 1.8rem 0;
 }
 .right-text span {
   font-weight: 600;
@@ -75,7 +82,7 @@ main {
 .form-content {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 3rem;
   background-color: white;
   width: 100%;
 }
@@ -90,9 +97,9 @@ form {
   border: 1px solid var(--neutral-grayish-blue);
   border-radius: 5px;
   width: 100%;
-  height: 54px;
-  padding: 0px 30px;
-  margin-top: 20px;
+  height: 5.4rem;
+  padding: 0 3rem;
+  margin-top: 2rem;
   font-size: var(--font-size);
   font-weight: 600;
   caret-color: var(--accent-blue);
@@ -102,11 +109,11 @@ form {
   border-color: var(--neutral-dark-blue);
 }
 
-label{
-    color: var(--primary-red);
-    align-self: flex-end;
-    font-size: 11px;
-    padding-top: 5px;
+label {
+  color: var(--primary-red);
+  align-self: flex-end;
+  font-size: 1.1rem;
+  padding-top: 0.5rem;
 }
 
 .form-content input[type='submit'] {
@@ -124,8 +131,8 @@ label{
 }
 
 form p {
-padding-top: 20px;
-  font-size: 11px;
+  padding-top: 2rem;
+  font-size: 1.1rem;
   color: var(--neutral-grayish-blue);
   font-weight: 500;
 }
@@ -146,7 +153,7 @@ form p a {
   background-color: var(--accent-blue);
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 1.5rem;
 }
 .attribution a {
   text-decoration: 0;
@@ -154,22 +161,25 @@ form p a {
 }
 
 @media only screen and (max-width: 811px) {
-    .container{
-        background-image: url(images/bg-intro-mobile.png);
-    }
-    
-    main{
-        flex-direction: column;
-        margin: 25px;
-    }
+  .container {
+    background-image: url(images/bg-intro-mobile.png);
+  }
 
-    .main-left,.main-right{
-        width: 100%;
-    }
-    .main-left, .right-text, form p{
-        text-align: center;
-    }
-    .main-left h1 {
-        font-size: 24px;
-    }
+  main {
+    flex-direction: column;
+    margin: 2.5rem;
+  }
+
+  .main-left,
+  .main-right {
+    width: 100%;
+  }
+  .main-left,
+  .right-text,
+  form p {
+    text-align: center;
+  }
+  .main-left h1 {
+    font-size: 2.4rem;
+  }
 }
