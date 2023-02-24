@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+@import 'themes';
+
+$font-weights: (
+  'bold': 700,
+);
+$font-size: 3.9rem;
+$border-radius: 10px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  @include flex-column;
+  font-size: 1.6rem;
+  font-weight: map-get($map: $font-weights, $key: 'bold');
+  font-family: 'League Spartan', sans-serif;
+
+  background-color: var($main-background);
+}
+
+main {
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  margin: auto;
+  max-width: 111.1rem;
+}
+
+.calculator {
+  @include flex-column;
+  gap: 25px;
+
+  .headings {
+    @include flex-row;
+    justify-content: space-between;
+    width: 100%;
+
+    span {
+      color: var($text-white);
+    }
+    &-logo {
+      font-size: 3rem;
+    }
+    &-theme {
+      @include flex-row;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 1.4rem;
+      gap: 2rem;
+
+      input[type='radio'] {
+        accent-color: var($key-background-equal);
+      }
+    }
+  }
+
+  .screen {
+    width: 100%;
+    background-color: var($screen-background);
+    border-radius: $border-radius;
+    padding: 4rem 3.5rem;
+
+    form {
+      input {
+        all: unset;
+        font-size: 5.6rem;
+        color: var($text-white);
+        width: 100%;
+      }
+    }
+  }
+  .keyboard {
+    background-color: var($toggle-keypad-background);
+    display: -ms-grid;
+    display: grid;
+    gap: 2.5rem;
+    padding: 3.2rem;
+    grid-template-columns: repeat(4, minmax(4.1rem, 10rem));
+    grid-template-rows: repeat(5, 6.2rem);
+    grid-template-areas:
+      'I7 I8 I9 Idel'
+      'I4 I5 I6 Iplus'
+      'I1 I2 I3 Iminus'
+      'Idot I0 Islash Imult'
+      'Ireset Ireset Iequal Iequal';
+
+    border-radius: $border-radius;
+
+    &-button {
+      all: unset;
+      text-align: center;
+      cursor: pointer;
+
+      font-size: $font-size;
+      background-color: var($key-background);
+      color: var($text-very-dark);
+      border-radius: $border-radius;
+      --box-shadow: 0px 4px 1px;
+      box-shadow: var(--box-shadow) var($key-shadow);
+
+      &.func,
+      &.equal {
+        background-color: var($key-background-func);
+        color: var($text-white);
+        font-size: $font-size - 1.1rem;
+      }
+      &.func {
+        background-color: var($key-background-func);
+        box-shadow: var(--box-shadow) var($key-shadow-func);
+      }
+      &.equal {
+        background-color: var($key-background-equal);
+        box-shadow: var(--box-shadow) var($key-shadow-equal);
+      }
+
+      &:hover {
+        @include crossBrowser(filter, brightness(80%));
+      }
+    }
+  }
+}
+
+footer {
+  background-color: var($screen-background);
+  color: var($text-white);
+  text-align: center;
+  padding: 1.5rem;
+
+  a {
+    text-decoration: 0;
+    color: var($key-background-equal);
+  }
+}

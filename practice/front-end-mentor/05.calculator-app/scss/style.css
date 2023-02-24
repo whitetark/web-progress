@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+:root.dark {
+  --main-background: hsl(222deg, 26%, 31%);
+  --toggle-keypad-background: hsl(223deg, 31%, 20%);
+  --screen-background: hsl(224deg, 36%, 15%);
+  --key-background-func: hsl(225deg, 21%, 49%);
+  --key-shadow-func: hsl(224deg, 28%, 35%);
+  --key-background-equal: hsl(6deg, 63%, 50%);
+  --key-shadow-secondary: hsl(6deg, 70%, 34%);
+  --key-background: hsl(30deg, 25%, 89%);
+  --key-shadow: hsl(28deg, 16%, 65%);
+  --text-very-dark: hsl(221deg, 14%, 31%);
+  --text-white: hsl(0deg, 0%, 100%);
+}
+
+:root.light {
+  --main-background: hsl(0deg, 0%, 90%);
+  --toggle-keypad-background: hsl(0deg, 5%, 81%);
+  --screen-background: hsl(0deg, 0%, 93%);
+  --key-background-func: hsl(185deg, 42%, 37%);
+  --key-shadow-func: hsl(185deg, 58%, 25%);
+  --key-background-equal: hsl(25deg, 98%, 40%);
+  --key-shadow-secondary: hsl(25deg, 99%, 27%);
+  --key-background: hsl(45deg, 7%, 89%);
+  --key-shadow: hsl(35deg, 11%, 61%);
+  --text-very-dark: hsl(60deg, 10%, 19%);
+  --text-white: hsl(0deg, 0%, 0%);
+}
+
+:root.purple {
+  --main-background: hsl(268deg, 75%, 9%);
+  --toggle-keypad-background: hsl(268deg, 71%, 12%);
+  --screen-background: hsl(268deg, 71%, 12%);
+  --key-background-func: hsl(281deg, 89%, 26%);
+  --key-shadow-func: hsl(285deg, 91%, 52%);
+  --key-background-equal: hsl(176deg, 100%, 44%);
+  --key-shadow-secondary: hsl(177deg, 92%, 70%);
+  --key-background: hsl(268deg, 47%, 21%);
+  --key-shadow: hsl(290deg, 70%, 36%);
+  --text-very-dark: hsl(52deg, 100%, 62%);
+  --text-white: hsl(52deg, 100%, 62%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--main-background);
+}
+
+main {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+  max-width: 111.1rem;
+}
+
+.calculator {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.calculator .headings {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.calculator .headings span {
+  color: var(--text-white);
+}
+.calculator .headings-logo {
+  font-size: 3rem;
+}
+.calculator .headings-theme {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 2rem;
+}
+.calculator .headings-theme input[type=radio] {
+  accent-color: var(--key-background-equal);
+}
+.calculator .screen {
+  width: 100%;
+  background-color: var(--screen-background);
+  border-radius: 10px;
+  padding: 4rem 3.5rem;
+}
+.calculator .screen form input {
+  all: unset;
+  font-size: 5.6rem;
+  color: var(--text-white);
+  width: 100%;
+}
+.calculator .keyboard {
+  background-color: var(--toggle-keypad-background);
+  display: grid;
+  gap: 2.5rem;
+  padding: 3.2rem;
+  grid-template-columns: repeat(4, minmax(4.1rem, 10rem));
+  grid-template-rows: repeat(5, 6.2rem);
+  grid-template-areas: "I7 I8 I9 Idel" "I4 I5 I6 Iplus" "I1 I2 I3 Iminus" "Idot I0 Islash Imult" "Ireset Ireset Iequal Iequal";
+  border-radius: 10px;
+}
+.calculator .keyboard-button {
+  all: unset;
+  text-align: center;
+  cursor: pointer;
+  font-size: 3.9rem;
+  background-color: var(--key-background);
+  color: var(--text-very-dark);
+  border-radius: 10px;
+  --box-shadow: 0px 4px 1px;
+  box-shadow: var(--box-shadow) var(--key-shadow);
+}
+.calculator .keyboard-button.func, .calculator .keyboard-button.equal {
+  background-color: var(--key-background-func);
+  color: var(--text-white);
+  font-size: 2.8rem;
+}
+.calculator .keyboard-button.func {
+  background-color: var(--key-background-func);
+  box-shadow: var(--box-shadow) var(--key-shadow-func);
+}
+.calculator .keyboard-button.equal {
+  background-color: var(--key-background-equal);
+  box-shadow: var(--box-shadow) var(--key-shadow-secondary);
+}
+.calculator .keyboard-button:hover {
+  -moz-filter: brightness(80%);
+  -ms-filter: brightness(80%);
+  filter: brightness(80%);
+}
+
+footer {
+  background-color: var(--screen-background);
+  color: var(--text-white);
+  text-align: center;
+  padding: 1.5rem;
+}
+footer a {
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+  color: var(--key-background-equal);
+}/*# sourceMappingURL=style.css.map */

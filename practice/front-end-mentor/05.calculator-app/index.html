@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="scss/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="calculator">
+        <section class="headings">
+          <div class="headings-logo">
+            <span>calc</span>
+          </div>
+          <section class="headings-theme">
+            <span>THEME</span>
+            <form>
+              <input type="radio" name="theme" id="dark" checked="checked" />
+              <input type="radio" name="theme" id="light" />
+              <input type="radio" name="theme" id="purple" />
+            </form>
+          </section>
+        </section>
+        <section class="screen">
+          <form>
+            <input type="text" name="result" id="result" dir="rtl" size="1" readonly />
+          </form>
+        </section>
+        <section class="keyboard">
+          <button class="keyboard-button" style="grid-area: I7">7</button>
+          <button class="keyboard-button" style="grid-area: I8">8</button>
+          <button class="keyboard-button" style="grid-area: I9">9</button>
+          <button class="keyboard-button func" style="grid-area: Idel">DEL</button>
+          <button class="keyboard-button" style="grid-area: I4">4</button>
+          <button class="keyboard-button" style="grid-area: I5">5</button>
+          <button class="keyboard-button" style="grid-area: I6">6</button>
+          <button class="keyboard-button" style="grid-area: Iplus">+</button>
+          <button class="keyboard-button" style="grid-area: I1">1</button>
+          <button class="keyboard-button" style="grid-area: I2">2</button>
+          <button class="keyboard-button" style="grid-area: I3">3</button>
+          <button class="keyboard-button" style="grid-area: Iminus">-</button>
+          <button class="keyboard-button" style="grid-area: Idot">.</button>
+          <button class="keyboard-button" style="grid-area: I0">0</button>
+          <button class="keyboard-button" style="grid-area: Islash">/</button>
+          <button class="keyboard-button" style="grid-area: Imult">x</button>
+          <button class="keyboard-button func" style="grid-area: Ireset">RESET</button>
+          <button class="keyboard-button equal" style="grid-area: Iequal">=</button>
+        </section>
+      </section>
+    </main>
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.github.com/whitetark">@whitetark</a>.
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>
