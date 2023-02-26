@@ -14,7 +14,7 @@ function typing(button) {
     if (valueAfterOperator() == '0') {
       backspace()
     }
-    screen.value += button.innerText;
+    screen.value += button.innerText
   } else if (operators.includes(button.innerText)) {
     if (operators.includes(screen.value.slice(-1))) {
       backspace()
@@ -78,7 +78,7 @@ function toggleTheme(input) {
   }
 }
 
-;(function toggleTheme() {
+;(function () {
   switch (localStorage.getItem('theme')) {
     case 'light':
       setTheme('light')
@@ -88,9 +88,17 @@ function toggleTheme(input) {
       setTheme('purple')
       document.getElementById('purple').setAttribute('checked', 'checked')
       break
-    default:
+    case 'dark':
       setTheme('dark')
       document.getElementById('dark').setAttribute('checked', 'checked')
       break
+    default:
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme('dark')
+        document.getElementById('dark').setAttribute('checked', 'checked')
+      } else {
+        setTheme('light')
+        document.getElementById('light').setAttribute('checked', 'checked')
+      }
   }
 })()

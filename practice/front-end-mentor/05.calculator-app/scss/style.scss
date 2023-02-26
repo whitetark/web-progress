@@ -147,18 +147,15 @@ footer {
 
 @media only screen and (max-width: 445px) {
   $font-size: 3rem;
-
   .calculator{
-
     padding: 0.7rem;
     .screen{
       form {
         input {
           font-size: 4rem;
         }
+      }
     }
-    }
-    
     .keyboard{
       gap: 1.5rem;
       padding: 2.5rem;
