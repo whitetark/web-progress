@@ -38,6 +38,7 @@ main {
 .calculator {
   @include flex-column;
   gap: 25px;
+  padding: 2rem;
 
   .headings {
     @include flex-row;
@@ -60,6 +61,7 @@ main {
 
       input[type='radio'] {
         accent-color: var($key-background-equal);
+        outline: none;
       }
     }
   }
@@ -68,7 +70,7 @@ main {
     width: 100%;
     background-color: var($screen-background);
     border-radius: $border-radius;
-    padding: 4rem 3.5rem;
+    padding: 3rem 2.6rem;
 
     form {
       input {
@@ -76,6 +78,7 @@ main {
         font-size: 5.6rem;
         color: var($text-white);
         width: 100%;
+        text-align: right;
       }
     }
   }
@@ -85,7 +88,8 @@ main {
     display: grid;
     gap: 2.5rem;
     padding: 3.2rem;
-    grid-template-columns: repeat(4, minmax(4.1rem, 10rem));
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(6.2rem, 10rem));
     grid-template-rows: repeat(5, 6.2rem);
     grid-template-areas:
       'I7 I8 I9 Idel'
@@ -93,7 +97,6 @@ main {
       'I1 I2 I3 Iminus'
       'Idot I0 Islash Imult'
       'Ireset Ireset Iequal Iequal';
-
     border-radius: $border-radius;
 
     button {
@@ -112,7 +115,7 @@ main {
       &.equal {
         background-color: var($key-background-func);
         color: var($text-white);
-        font-size: $font-size - 1.1rem;
+        font-size: $font-size - 1.5rem;
       }
       &.func {
         background-color: var($key-background-func);
@@ -142,6 +145,26 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark){
-  
+@media only screen and (max-width: 445px) {
+  $font-size: 3rem;
+
+  .calculator{
+
+    padding: 0.7rem;
+    .screen{
+      form {
+        input {
+          font-size: 4rem;
+        }
+    }
+    }
+    
+    .keyboard{
+      gap: 1.5rem;
+      padding: 2.5rem;
+      button{
+        font-size: 3rem;
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
-:root.dark {
+.dark {
   --main-background: hsl(222, 26%, 31%);
   --toggle-keypad-background: hsl(223, 31%, 20%);
   --screen-background: hsl(224, 36%, 15%);
@@ -13,7 +13,7 @@
   --text-white: hsl(0, 0%, 100%);
 }
 
-:root.light {
+.light {
   --main-background: hsl(0, 0%, 90%);
   --toggle-keypad-background: hsl(0, 5%, 81%);
   --screen-background: hsl(0, 0%, 93%);
@@ -27,7 +27,7 @@
   --text-white: hsl(0, 0%, 0%);
 }
 
-:root.purple {
+.purple {
   --main-background: hsl(268, 75%, 9%);
   --toggle-keypad-background: hsl(268, 71%, 12%);
   --screen-background: hsl(268, 71%, 12%);
@@ -77,6 +77,7 @@ main {
   display: -webkit-flex;
   flex-direction: column;
   gap: 25px;
+  padding: 2rem;
 }
 .calculator .headings {
   display: flex;
@@ -102,25 +103,28 @@ main {
 }
 .calculator .headings-theme input[type=radio] {
   accent-color: var(--key-background-equal);
+  outline: none;
 }
 .calculator .screen {
   width: 100%;
   background-color: var(--screen-background);
   border-radius: 10px;
-  padding: 4rem 3.5rem;
+  padding: 3rem 2.6rem;
 }
 .calculator .screen form input {
   all: unset;
   font-size: 5.6rem;
   color: var(--text-white);
   width: 100%;
+  text-align: right;
 }
 .calculator .keyboard {
   background-color: var(--toggle-keypad-background);
   display: grid;
   gap: 2.5rem;
   padding: 3.2rem;
-  grid-template-columns: repeat(4, minmax(4.1rem, 10rem));
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(6.2rem, 10rem));
   grid-template-rows: repeat(5, 6.2rem);
   grid-template-areas: "I7 I8 I9 Idel" "I4 I5 I6 Iplus" "I1 I2 I3 Iminus" "Idot I0 Islash Imult" "Ireset Ireset Iequal Iequal";
   border-radius: 10px;
@@ -139,7 +143,7 @@ main {
 .calculator .keyboard button.func, .calculator .keyboard button.equal {
   background-color: var(--key-background-func);
   color: var(--text-white);
-  font-size: 2.8rem;
+  font-size: 2.4rem;
 }
 .calculator .keyboard button.func {
   background-color: var(--key-background-func);
@@ -165,4 +169,20 @@ footer a {
   -webkit-text-decoration: 0;
           text-decoration: 0;
   color: var(--key-background-equal);
+}
+
+@media only screen and (max-width: 445px) {
+  .calculator {
+    padding: 0.7rem;
+  }
+  .calculator .screen form input {
+    font-size: 4rem;
+  }
+  .calculator .keyboard {
+    gap: 1.5rem;
+    padding: 2.5rem;
+  }
+  .calculator .keyboard button {
+    font-size: 3rem;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -14,7 +14,7 @@ function typing(button) {
     if (valueAfterOperator() == '0') {
       backspace()
     }
-    screen.value += button.innerText
+    screen.value += button.innerText;
   } else if (operators.includes(button.innerText)) {
     if (operators.includes(screen.value.slice(-1))) {
       backspace()
