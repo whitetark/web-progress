@@ -96,7 +96,7 @@ main {
 
     border-radius: $border-radius;
 
-    &-button {
+    button {
       all: unset;
       text-align: center;
       cursor: pointer;
@@ -140,4 +140,8 @@ footer {
     text-decoration: 0;
     color: var($key-background-equal);
   }
+}
+
+@media (prefers-color-scheme: dark){
+  
 }

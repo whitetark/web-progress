@@ -43,12 +43,12 @@ $themes-map-purple: (
   $text-white: hsl(52, 100%, 62%),
 );
 
-:root.dark {
+.dark {
   @include spread-map($themes-map-dark);
 }
-:root.light {
+.light {
   @include spread-map($themes-map-light);
 }
-:root.purple {
+.purple {
   @include spread-map($themes-map-purple);
 }
