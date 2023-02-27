@@ -1,0 +1,70 @@
+@import 'reset';
+@import 'mixers';
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+$white: hsl(0, 0%, 98%);
+$gray: hsl(0, 0%, 41%);
+$black: hsl(0, 0%, 8%);
+
+$font-weights: (
+  'regular': 500,
+  'bold': 700,
+);
+
+body {
+  background-color: $white;
+  font-family: 'Epilogue', sans-serif;
+}
+
+header,
+main {
+  width: 100%;
+}
+nav,
+.main-container {
+  max-width: 111.1rem;
+  margin: 0 auto;
+}
+
+nav {
+  @include flex-row;
+  align-items: center;
+
+  span {
+    font-size: 3.2rem;
+    font-weight: map-get($map: $font-weights, $key: 'bold');
+  }
+  ul {
+    @include flex-row;
+  }
+  .login-register {
+    margin-left: auto;
+  }
+}
+
+.main-container {
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &-content {
+    @include flex-column;
+
+    &-partners {
+      @include flex-row;
+    }
+  }
+}
+
+footer {
+  background-color: $gray;
+  color: $white;
+  text-align: center;
+  padding: 1.5rem;
+
+  a {
+    text-decoration: 0;
+    color: $black;
+  }
+}
