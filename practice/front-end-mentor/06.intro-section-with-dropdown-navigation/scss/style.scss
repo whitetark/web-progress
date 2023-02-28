@@ -14,45 +14,132 @@ $font-weights: (
 body {
   background-color: $white;
   font-family: 'Epilogue', sans-serif;
+  font-weight: map-get($map: $font-weights, $key: 'regular');
+  color: $gray;
 }
 
 header,
 main {
   width: 100%;
 }
-nav,
-.main-container {
-  max-width: 111.1rem;
-  margin: 0 auto;
-}
 
 nav {
   @include flex-row;
   align-items: center;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  max-width: 140rem;
+  margin: 0 auto;
 
-  span {
+  > span {
     font-size: 3.2rem;
     font-weight: map-get($map: $font-weights, $key: 'bold');
+    color: $black;
   }
-  ul {
+  .nav-menu {
     @include flex-row;
+    padding-left: 6rem;
+    font-size: 1.5rem;
+    gap: 4rem;
+    &-button {
+      .dropdown {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+        position: absolute;
+        transition: all 0.5s ease;
+        padding-top: 2rem;
+        transform: translateX(-1.5rem);
+
+        &-content {
+          @include flex-column;
+          background-color: $white;
+          padding: 2rem;
+          gap: 2rem;
+          box-shadow: 1px 2px 20px 0 rgba($color: #d4d4d4, $alpha: 1);
+          border-radius: 8%;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          a {
+            gap: 1.3rem;
+          }
+          img {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+        }
+      }
+      a {
+        @include flex-row;
+        color: $gray;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+    }
   }
   .login-register {
+    @include flex-row;
     margin-left: auto;
+    gap: 1.5rem;
+    button {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      &.border {
+        border: 2px solid $gray;
+        border-radius: 10px;
+        &:hover {
+          border-color: $black;
+        }
+      }
+    }
   }
+  a,
+  button {
+    &:hover {
+      color: $black;
+    }
+  }
+}
+.nav-menu .nav-menu-button:hover > .dropdown,
+.nav-menu .nav-menu-button:focus-within > .dropdown-content,
+.nav-menu .nav-menu-button .dropdown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
 .main-container {
   @include flex-row;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  max-width: 111rem;
+  margin: 0 auto;
+  gap: 10rem;
 
   &-content {
     @include flex-column;
-
+    justify-content: space-between;
+    h1 {
+      font-size: 8rem;
+      font-weight: map-get($map: $font-weights, $key: 'bold');
+      color: $black;
+    }
+    p {
+      font-size: 1.8rem;
+      line-height: 1.4;
+    }
+    button {
+      background-color: $black;
+      color: $white;
+      border-radius: 10px;
+      padding: 2rem 3.2rem;
+      cursor: pointer;
+      align-self: flex-start;
+    }
     &-partners {
       @include flex-row;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
