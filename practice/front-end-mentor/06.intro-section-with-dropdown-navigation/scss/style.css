@@ -107,6 +107,11 @@ nav .nav-menu-button a {
   justify-content: center;
   gap: 0.5rem;
 }
+nav .nav-menu-button:hover .hover_img {
+  content: url(../images/icon-arrow-up.svg);
+  color: hsl(0, 0%, 8%);
+  filter: brightness(0);
+}
 nav .login-register {
   display: flex;
   display: -webkit-flex;
@@ -142,15 +147,18 @@ nav button:hover {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
-  max-width: 111rem;
+  max-width: 115rem;
   margin: 0 auto;
-  gap: 10rem;
+  padding-top: 7rem;
+  gap: 13rem;
 }
 .main-container-content {
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 6rem;
 }
 .main-container-content h1 {
   font-size: 8rem;
@@ -162,19 +170,24 @@ nav button:hover {
   line-height: 1.4;
 }
 .main-container-content button {
+  font-weight: 700;
   background-color: hsl(0, 0%, 8%);
   color: hsl(0, 0%, 98%);
+  border: 2px solid hsl(0, 0%, 8%);
   border-radius: 10px;
   padding: 2rem 3.2rem;
   cursor: pointer;
-  align-self: flex-start;
+}
+.main-container-content button:hover {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 8%);
 }
 .main-container-content-partners {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  gap: 4rem;
 }
 
 footer {
@@ -187,4 +200,16 @@ footer a {
   -webkit-text-decoration: 0;
           text-decoration: 0;
   color: hsl(0, 0%, 8%);
+}
+
+@media only screen and (max-width: 1100px) {
+  .main-container {
+    flex-direction: column-reverse;
+  }
+  .main-container-content {
+    align-items: center;
+  }
+  .main-container-photo {
+    content: url(../images/image-hero-mobile.png);
+  }
 }/*# sourceMappingURL=style.css.map */

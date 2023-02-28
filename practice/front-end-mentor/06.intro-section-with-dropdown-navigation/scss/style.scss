@@ -77,6 +77,13 @@ nav {
         justify-content: center;
         gap: 0.5rem;
       }
+      &:hover{
+        .hover_img{
+          content: url(../images/icon-arrow-up.svg);
+          color: $black;
+          filter: brightness(0);
+        }
+      }
     }
   }
   .login-register {
@@ -112,13 +119,16 @@ nav {
 
 .main-container {
   @include flex-row;
-  max-width: 111rem;
+  max-width: 115rem;
   margin: 0 auto;
-  gap: 10rem;
+  padding-top: 7rem;
+  gap: 13rem;
 
   &-content {
     @include flex-column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 6rem;
     h1 {
       font-size: 8rem;
       font-weight: map-get($map: $font-weights, $key: 'bold');
@@ -129,17 +139,23 @@ nav {
       line-height: 1.4;
     }
     button {
+      font-weight: map-get($map: $font-weights, $key: 'bold');
       background-color: $black;
       color: $white;
+
+      border: 2px solid $black;
       border-radius: 10px;
       padding: 2rem 3.2rem;
       cursor: pointer;
-      align-self: flex-start;
+      &:hover{
+        background-color: $white;
+        color: $black;
+      }
     }
     &-partners {
       @include flex-row;
-      justify-content: space-between;
       align-items: center;
+      gap: 4rem;
     }
   }
 }
@@ -154,4 +170,17 @@ footer {
     text-decoration: 0;
     color: $black;
   }
+}
+
+@media only screen and (max-width: 1100px){
+  .main-container{
+    flex-direction: column-reverse;
+    &-content{
+      align-items: center;
+    }
+    &-photo{
+      content: url(../images/image-hero-mobile.png);
+    }
+  }
+
 }
