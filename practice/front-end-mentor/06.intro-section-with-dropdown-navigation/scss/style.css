@@ -146,7 +146,7 @@ nav .login-register button {
 }
 nav .login-register button.border {
   border: 2px solid hsl(0, 0%, 41%);
-  border-radius: 10px;
+  border-radius: 12px;
 }
 nav .login-register button.border:hover {
   border-color: hsl(0, 0%, 8%);
@@ -171,8 +171,8 @@ nav button:hover {
   flex-direction: row;
   max-width: 115rem;
   margin: 0 auto;
-  padding-top: 7rem;
-  gap: 13rem;
+  padding-top: 6rem;
+  gap: 15rem;
 }
 .main-container-content {
   display: flex;
@@ -190,14 +190,16 @@ nav button:hover {
 .main-container-content p {
   font-size: 1.8rem;
   line-height: 1.4;
+  padding-right: 6rem;
 }
 .main-container-content button {
   font-weight: 700;
   background-color: hsl(0, 0%, 8%);
   color: hsl(0, 0%, 98%);
+  font-size: 1.8rem;
   border: 2px solid hsl(0, 0%, 8%);
-  border-radius: 10px;
-  padding: 2rem 3.2rem;
+  border-radius: 15px;
+  padding: 2rem 3rem;
 }
 .main-container-content button:hover {
   background-color: hsl(0, 0%, 98%);
@@ -206,7 +208,10 @@ nav button:hover {
 .main-container-content-partners {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4rem;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  padding-top: 4.6rem;
 }
 
 footer {
@@ -231,6 +236,9 @@ footer a {
     align-items: center;
     gap: 2rem;
     text-align: center;
+  }
+  .main-container-content p {
+    padding-right: 0;
   }
   .main-container-content-partners {
     padding-top: 4rem;

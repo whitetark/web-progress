@@ -110,7 +110,7 @@ nav {
       padding: 1rem 2rem;
       &.border {
         border: 2px solid $gray;
-        border-radius: 10px;
+        border-radius: 12px;
         &:hover {
           border-color: $black;
         }
@@ -140,8 +140,8 @@ nav {
   @include flex-row;
   max-width: 115rem;
   margin: 0 auto;
-  padding-top: 7rem;
-  gap: 13rem;
+  padding-top: 6rem;
+  gap: 15rem;
 
   &-content {
     @include flex-column;
@@ -156,15 +156,16 @@ nav {
     p {
       font-size: 1.8rem;
       line-height: 1.4;
+      padding-right: 6rem;
     }
     button {
       font-weight: map-get($map: $font-weights, $key: 'bold');
       background-color: $black;
       color: $white;
-
+      font-size: 1.8rem;
       border: 2px solid $black;
-      border-radius: 10px;
-      padding: 2rem 3.2rem;
+      border-radius: 15px;
+      padding: 2rem 3rem;
       &:hover {
         background-color: $white;
         color: $black;
@@ -173,7 +174,10 @@ nav {
     &-partners {
       display: grid;
       grid-template-columns: repeat(4,1fr);
-      gap: 4rem;
+      gap: 2rem;
+      align-items: center;
+      justify-items: center;
+      padding-top: 4.6rem;
     }
   }
 }
@@ -199,6 +203,9 @@ footer {
       align-items: center;
       gap: 2rem;
       text-align: center;
+      p{
+        padding-right: 0;
+      }
       &-partners{
         padding-top: 4rem;
       }
