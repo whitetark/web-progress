@@ -11,12 +11,15 @@
     <header>
       <nav>
         <span>snap</span>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
+          <button id="closeMenu">
+            <img src="images/icon-close-menu.svg" />
+          </button>
           <li class="nav-menu-button">
-            <a href="#">
+            <button onclick="dropdownActive(this)">
               <span>Features</span>
-              <img src="images/icon-arrow-down.svg" alt="" class="hover_img"/>
-            </a>
+              <img src="images/icon-arrow-down.svg" alt="" class="hover_img" />
+            </button>
             <div class="dropdown">
               <ul class="dropdown-content">
                 <li>
@@ -47,10 +50,10 @@
             </div>
           </li>
           <li class="nav-menu-button">
-            <a href="#">
-              Company
-              <img src="images/icon-arrow-down.svg" alt="" class="hover_img"/>
-            </a>
+            <button onclick="dropdownActive(this)">
+              <span>Company</span>
+              <img src="images/icon-arrow-down.svg" alt="" class="hover_img" />
+            </button>
             <div class="dropdown">
               <ul class="dropdown-content">
                 <li>
@@ -71,11 +74,14 @@
           <li class="nav-menu-button">
             <a href="#"> About </a>
           </li>
+          <div class="login-register" id="login-register">
+            <button>Login</button>
+            <button class="border">Register</button>
+          </div>
         </ul>
-        <div class="login-register">
-          <button>Login</button>
-          <button class="border">Register</button>
-        </div>
+        <button id="checkbtn">
+          <img src="images/icon-menu.svg" alt="" />
+        </button>
       </nav>
     </header>
     <main>

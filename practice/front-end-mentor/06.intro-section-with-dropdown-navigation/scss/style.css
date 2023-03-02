@@ -33,6 +33,7 @@ a {
 
 button {
   all: unset;
+  cursor: pointer;
 }
 
 body {
@@ -40,11 +41,18 @@ body {
   font-family: "Epilogue", sans-serif;
   font-weight: 500;
   color: hsl(0, 0%, 41%);
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
 }
 
 header,
 main {
   width: 100%;
+}
+
+main {
+  min-height: 100vh;
 }
 
 nav {
@@ -62,13 +70,23 @@ nav > span {
   font-weight: 700;
   color: hsl(0, 0%, 8%);
 }
+nav #checkbtn {
+  display: none;
+  justify-self: flex-end;
+}
 nav .nav-menu {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+  align-items: center;
   padding-left: 6rem;
   font-size: 1.5rem;
   gap: 4rem;
+  width: 100%;
+}
+nav .nav-menu #closeMenu {
+  display: none;
+  margin-left: auto;
 }
 nav .nav-menu-button .dropdown {
   visibility: hidden;
@@ -86,7 +104,7 @@ nav .nav-menu-button .dropdown-content {
   background-color: hsl(0, 0%, 98%);
   padding: 2rem;
   gap: 2rem;
-  box-shadow: 1px 2px 20px 0 #d4d4d4;
+  box-shadow: 1px 2px 3px 0 #d4d4d4;
   border-radius: 8%;
   justify-content: flex-start;
   align-items: flex-start;
@@ -98,19 +116,19 @@ nav .nav-menu-button .dropdown-content img {
   width: 1.6rem;
   height: 1.6rem;
 }
-nav .nav-menu-button a {
+nav .nav-menu-button .dropdown.dr-active {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+nav .nav-menu-button a,
+nav .nav-menu-button button {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
   color: hsl(0, 0%, 41%);
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-}
-nav .nav-menu-button:hover .hover_img {
-  content: url(../images/icon-arrow-up.svg);
-  color: hsl(0, 0%, 8%);
-  filter: brightness(0);
 }
 nav .login-register {
   display: flex;
@@ -121,7 +139,6 @@ nav .login-register {
 }
 nav .login-register button {
   padding: 1rem 2rem;
-  cursor: pointer;
 }
 nav .login-register button.border {
   border: 2px solid hsl(0, 0%, 41%);
@@ -135,12 +152,13 @@ nav button:hover {
   color: hsl(0, 0%, 8%);
 }
 
-.nav-menu .nav-menu-button:hover > .dropdown,
-.nav-menu .nav-menu-button:focus-within > .dropdown-content,
-.nav-menu .nav-menu-button .dropdown:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
+.nav-menu-button:has(button):has(.dr-active) span {
+  color: hsl(0, 0%, 8%);
+}
+.nav-menu-button:has(button):has(.dr-active) .hover_img {
+  content: url(../images/icon-arrow-up.svg);
+  color: hsl(0, 0%, 8%);
+  filter: brightness(0);
 }
 
 .main-container {
@@ -176,7 +194,6 @@ nav button:hover {
   border: 2px solid hsl(0, 0%, 8%);
   border-radius: 10px;
   padding: 2rem 3.2rem;
-  cursor: pointer;
 }
 .main-container-content button:hover {
   background-color: hsl(0, 0%, 98%);
@@ -211,5 +228,58 @@ footer a {
   }
   .main-container-photo {
     content: url(../images/image-hero-mobile.png);
+  }
+}
+@media only screen and (max-width: 775px) {
+  nav #checkbtn {
+    display: block;
+    margin-left: auto;
+  }
+  nav .nav-menu {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: hsl(0, 0%, 98%);
+    width: 60vw;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: all 0.4s ease;
+    box-shadow: 1px 2px 20px 0 #d4d4d4;
+    padding: 3rem;
+  }
+  nav .nav-menu .dropdown {
+    position: relative;
+    transition: all 0.5s ease;
+    padding-top: 2rem;
+    transform: translateX(0);
+  }
+  nav .nav-menu .dropdown-content {
+    box-shadow: 0px 0px 0px 0 #d4d4d4;
+  }
+  nav .nav-menu #closeMenu {
+    display: block;
+  }
+  nav .nav-menu li {
+    align-self: flex-start;
+  }
+  nav .nav-menu.active {
+    transform: translateX(0);
+  }
+  nav .nav-menu .login-register {
+    flex-direction: column;
+    margin-left: 0;
+    align-items: center;
+    width: 100%;
+  }
+  .main-container {
+    gap: 5rem;
+  }
+  .main-container-content {
+    gap: 2rem;
+    text-align: center;
+  }
+  .main-container h1 {
+    font-size: 3.6rem;
   }
 }/*# sourceMappingURL=style.css.map */
