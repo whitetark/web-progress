@@ -154,7 +154,7 @@ aside button span {
   align-items: center;
   width: 100%;
   position: sticky;
-  top: 6%;
+  top: 58px;
   z-index: 100;
   background-color: var(--background);
   padding: 10px;
