@@ -22,12 +22,68 @@ body {
   color: $white;
 }
 
+i {
+  color: $white;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  -webkit-mask-image: linear-gradient(180deg, black 50%, transparent 100%);
+  mask-image: linear-gradient(180deg, black 50%, transparent 100%);
+  &-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/album-cover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(10px) brightness(50%);
+    filter: blur(5px) brightness(38%);
+  }
+}
+
+section {
+  margin: 0 auto;
+  position: relative;
+  &.header-content {
+    max-width: 124.2rem;
+  }
+  &.main-content,
+  &.footer-content {
+    max-width: 99.2rem;
+  }
+}
+
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   .header-bar {
     @include flex-row;
     align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    .logo {
+      img {
+        width: 5rem;
+      }
+    }
     ul {
-      @include flex-row;
+      @include flex-column;
+      position: absolute;
+      right: 2rem;
+      top: 12rem;
+      gap: 2rem;
+      font-size: 2rem;
+      pointer-events: initial;
+    }
+    .menu-button {
+      font-size: 3rem;
     }
   }
   .navigation-bar {
@@ -35,6 +91,14 @@ header {
 }
 
 main {
+  h1 {
+    font-family: 'Monument Extended', sans-serif;
+    font-weight: map-get($map: $font-weights, $key: 'regular');
+    font-size: 3.6rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+
   .hero {
     @include flex-row;
     align-items: center;
@@ -44,8 +108,18 @@ main {
         @include flex-row;
       }
     }
+    &-image {
+      img {
+        width: 40.8rem;
+      }
+    }
   }
   .stream {
+    table,
+    td {
+      border: 1px solid $white;
+      border-collapse: collapse;
+    }
   }
   .tracklist {
   }
@@ -56,6 +130,10 @@ main {
 footer {
   .links {
     @include flex-row;
+
+    > * {
+      flex: 1;
+    }
     ul {
     }
     &-email {
@@ -65,6 +143,31 @@ footer {
     @include flex-row;
     ul {
       @include flex-row;
+    }
+  }
+}
+
+@media only screen and (max-width: 1185px) {
+  header {
+    .header-bar {
+      background-color: #00000070;
+      backdrop-filter: blur(10px);
+      ul {
+        @include flex-row;
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  header {
+    .header-bar {
+      ul {
+        display: none;
+      }
     }
   }
 }

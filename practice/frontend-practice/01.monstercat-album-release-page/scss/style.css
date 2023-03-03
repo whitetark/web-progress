@@ -45,16 +45,78 @@ body {
   color: #fdfdfd;
 }
 
+i {
+  color: #fdfdfd;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  -webkit-mask-image: linear-gradient(180deg, black 50%, transparent 100%);
+  mask-image: linear-gradient(180deg, black 50%, transparent 100%);
+}
+.background-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/album-cover.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  filter: blur(10px) brightness(50%);
+  filter: blur(5px) brightness(38%);
+}
+
+section {
+  margin: 0 auto;
+  position: relative;
+}
+section.header-content {
+  max-width: 124.2rem;
+}
+section.main-content, section.footer-content {
+  max-width: 99.2rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 header .header-bar {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+header .header-bar .logo img {
+  width: 5rem;
 }
 header .header-bar ul {
   display: flex;
   display: -webkit-flex;
-  flex-direction: row;
+  flex-direction: column;
+  position: absolute;
+  right: 2rem;
+  top: 12rem;
+  gap: 2rem;
+  font-size: 2rem;
+  pointer-events: initial;
+}
+header .header-bar .menu-button {
+  font-size: 3rem;
+}
+main h1 {
+  font-family: "Monument Extended", sans-serif;
+  font-weight: 400;
+  font-size: 3.6rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
 main .hero {
   display: flex;
@@ -72,10 +134,21 @@ main .hero-content-buttons {
   display: -webkit-flex;
   flex-direction: row;
 }
+main .hero-image img {
+  width: 40.8rem;
+}
+main .stream table,
+main .stream td {
+  border: 1px solid #fdfdfd;
+  border-collapse: collapse;
+}
 footer .links {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+}
+footer .links > * {
+  flex: 1;
 }
 footer .contact {
   display: flex;
@@ -86,4 +159,25 @@ footer .contact ul {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 1185px) {
+  header .header-bar {
+    background-color: rgba(0, 0, 0, 0.4392156863);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  header .header-bar ul {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+@media only screen and (max-width: 535px) {
+  header .header-bar ul {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
