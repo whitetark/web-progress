@@ -1,0 +1,70 @@
+@import url('https://fonts.cdnfonts.com/css/monument-extended');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import 'mixins';
+@import 'reset';
+
+$white: #fdfdfd;
+$blue: #1e90ff;
+$gray: #383838;
+$black: #000000;
+
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 600,
+);
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: map-get($map: $font-weights, $key: 'medium');
+  background-image: url(../images/background-tile.webp);
+  background-repeat: repeat;
+  color: $white;
+}
+
+header {
+  .header-bar {
+    @include flex-row;
+    align-items: center;
+    ul {
+      @include flex-row;
+    }
+  }
+  .navigation-bar {
+  }
+}
+
+main {
+  .hero {
+    @include flex-row;
+    align-items: center;
+    &-content {
+      @include flex-column;
+      &-buttons {
+        @include flex-row;
+      }
+    }
+  }
+  .stream {
+  }
+  .tracklist {
+  }
+  .video {
+  }
+}
+
+footer {
+  .links {
+    @include flex-row;
+    ul {
+    }
+    &-email {
+    }
+  }
+  .contact {
+    @include flex-row;
+    ul {
+      @include flex-row;
+    }
+  }
+}
