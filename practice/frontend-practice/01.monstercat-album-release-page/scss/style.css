@@ -45,7 +45,21 @@ body {
   color: #fdfdfd;
 }
 
-i {
+.text-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fdfdfd;
+  -webkit-text-fill-color: transparent;
+  text-stroke-width: 1px;
+  text-stroke-color: #fdfdfd;
+  text-fill-color: transparent;
+}
+
+.upcase, footer .links ul, main h1 {
+  font-family: "Monument Extended", sans-serif;
+  text-transform: uppercase;
+}
+
+a {
   color: #fdfdfd;
 }
 
@@ -75,10 +89,10 @@ section {
   position: relative;
 }
 section.header-content {
-  max-width: 124.2rem;
+  max-width: 140rem;
 }
 section.main-content, section.footer-content {
-  max-width: 99.2rem;
+  max-width: 113rem;
 }
 
 header {
@@ -92,7 +106,7 @@ header .header-bar {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 2.4rem 1.5rem;
 }
 header .header-bar .logo img {
   width: 5rem;
@@ -111,54 +125,225 @@ header .header-bar ul {
 header .header-bar .menu-button {
   font-size: 3rem;
 }
-main h1 {
-  font-family: "Monument Extended", sans-serif;
-  font-weight: 400;
-  font-size: 3.6rem;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
+main {
+  margin-top: 11rem;
 }
-main .hero {
+main .main-content {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 14rem;
+}
+main .main-content .hero {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
   align-items: center;
+  gap: 9rem;
 }
-main .hero-content {
+main .main-content .hero-content {
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
+  gap: 7rem;
 }
-main .hero-content-buttons {
+main .main-content .hero-content .name-title {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  font-size: 4rem;
+  font-weight: 500;
+}
+main .main-content .hero-content .name-title span:where(.text-stroke) {
+  font-size: 5rem;
+}
+main .main-content .hero-content-buttons {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+  gap: 1rem;
+  pointer-events: initial;
 }
-main .hero-image img {
-  width: 40.8rem;
+main .main-content .hero-content-buttons button {
+  border: 1px solid #fdfdfd;
+  padding: 1.6rem 1.8rem;
+  font-size: 1.4rem;
+  transition: 0.2ms ease-in-out;
+  text-align: center;
 }
-main .stream table,
-main .stream td {
+main .main-content .hero-content-buttons button.green {
+  background-color: #50A584;
+  border-color: #50A584;
+  letter-spacing: 0.1rem;
+}
+main .main-content .hero-content-buttons button:hover {
+  background-color: #fdfdfd;
+  color: #000000;
+  transition: 0.2ms ease-in-out;
+}
+main .main-content .hero-image {
+  position: relative;
+  max-width: 55rem;
+  max-height: 51.2rem;
+  padding-left: 2rem;
+}
+main .main-content .hero-image img {
+  max-width: 40.8rem;
+}
+main .main-content .hero-image p {
+  position: absolute;
+  left: -1rem;
+  bottom: 0;
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  font-style: italic;
+  font-size: 1.8rem;
+  word-spacing: 0.2rem;
+}
+main .main-content .hero-image .green {
+  color: #50A584;
+  font-weight: 600;
+}
+main .main-content .stream table,
+main .main-content .stream td {
   border: 1px solid #fdfdfd;
   border-collapse: collapse;
 }
-footer .links {
+main .main-content .stream td {
+  padding: 2rem;
+}
+main .main-content .stream td a {
+  font-size: 2rem;
+}
+main .main-content .tracklist i {
+  pointer-events: initial;
+}
+main .main-content .tracklist table {
+  width: 100%;
+  font-size: 1.8rem;
+}
+main .main-content .tracklist td {
+  padding: 1rem 0.5rem;
+}
+main .main-content .tracklist td:has(.track-info) {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+main .main-content .tracklist td:has(.track-info) i {
+  font-size: 3.6rem;
+}
+main .main-content .tracklist td:has(.track-info) .artist {
+  font-size: 1.4rem;
+}
+main .main-content .tracklist td:has(.time), main .main-content .tracklist td:has(.share) {
+  width: 8%;
+}
+main .main-content .tracklist td:has(.number) {
+  width: 3%;
+}
+main .main-content .video {
+  margin-bottom: 7rem;
+}
+main .main-content .video-content {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+main .main-content > *:has(h1) h1 {
+  margin-bottom: 3.5rem;
+}
+main h1 {
+  font-weight: 400;
+  font-size: 4.2rem;
+  letter-spacing: 0.2rem;
+}
+
+footer .divider {
+  border-top: 1px solid #fdfdfd;
+  margin: 6rem 0;
+}
+footer .links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 footer .links > * {
   flex: 1;
+}
+footer .links ul {
+  font-size: 1.8rem;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 1rem;
+  letter-spacing: 0.1rem;
+}
+footer .links-email {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer .links-email span {
+  color: #898888;
+}
+footer .links-email p {
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+footer .links-email form {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  border-bottom: 1px solid #383838;
+  font-size: 1.8rem;
+  padding-bottom: 1rem;
+}
+footer .links-email form input {
+  all: unset;
+  width: 90%;
+}
+footer .links-email form button {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  width: 10%;
+}
+footer .links-email form button:hover {
+  background-color: #fdfdfd;
+  color: #000000;
 }
 footer .contact {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+footer .contact div {
+  font-weight: 400;
+  font-size: 1.8rem;
+  font-style: italic;
+  letter-spacing: 0.1rem;
 }
 footer .contact ul {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+  font-size: 2.4rem;
+  gap: 1.5rem;
+}
+footer .autro {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+  padding: 10rem 18rem;
 }
 
 @media only screen and (max-width: 1185px) {

@@ -5,8 +5,10 @@
 
 $white: #fdfdfd;
 $blue: #1e90ff;
-$gray: #383838;
+$dark-gray: #383838;
+$light-gray: #898888;
 $black: #000000;
+$green: #50A584;
 
 $font-weights: (
   'regular': 400,
@@ -22,7 +24,19 @@ body {
   color: $white;
 }
 
-i {
+.text-stroke{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $white;
+    -webkit-text-fill-color: transparent;
+    text-stroke-width: 1px;
+    text-stroke-color: $white;
+    text-fill-color: transparent;
+}
+.upcase{
+  font-family: 'Monument Extended', sans-serif;
+  text-transform: uppercase;
+}
+a{
   color: $white;
 }
 
@@ -51,11 +65,11 @@ section {
   margin: 0 auto;
   position: relative;
   &.header-content {
-    max-width: 124.2rem;
+    max-width: 140rem;
   }
   &.main-content,
   &.footer-content {
-    max-width: 99.2rem;
+    max-width: 113rem;
   }
 }
 
@@ -67,7 +81,7 @@ header {
     @include flex-row;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
+    padding: 2.4rem 1.5rem;
     .logo {
       img {
         width: 5rem;
@@ -91,59 +105,210 @@ header {
 }
 
 main {
-  h1 {
-    font-family: 'Monument Extended', sans-serif;
-    font-weight: map-get($map: $font-weights, $key: 'regular');
-    font-size: 3.6rem;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-  }
-
-  .hero {
-    @include flex-row;
-    align-items: center;
-    &-content {
-      @include flex-column;
-      &-buttons {
+  margin-top: 11rem;
+  .main-content{
+    @include flex-column;
+    gap: 14rem;
+    .hero {
+      @include flex-row;
+      align-items: center;
+      gap: 9rem;
+      &-content {
+        @include flex-column;
+        gap: 7rem;
+        .name-title{
+          @include flex-column;
+          font-size: 4rem;
+          font-weight: map-get($map: $font-weights, $key: 'medium');
+          span:where(.text-stroke){
+            font-size: 5rem;
+          }
+        }
+        &-buttons {
+          @include flex-row;
+          gap: 1rem;
+          pointer-events: initial;
+          button{
+            border: 1px solid $white;
+            padding: 1.6rem 1.8rem;
+            font-size: 1.4rem;
+            transition: 0.2ms ease-in-out;
+            text-align: center;
+            &.green{
+              background-color: $green;
+              border-color: $green;
+              letter-spacing: 0.1rem;
+            }
+            &:hover{
+              background-color: $white;
+              color: $black;
+              transition: 0.2ms ease-in-out;
+            }
+          }
+        }
+      }
+      &-image {
+        position: relative;
+        max-width: 55rem;
+        max-height: 51.2rem;
+        padding-left: 2rem;
+        img {
+          max-width: 40.8rem;
+        }
+        p{
+          position: absolute;
+          left: -1rem;
+          bottom: 0;
+          writing-mode: vertical-lr;
+          transform: rotate(-180deg);
+          font-style: italic;
+          font-size: 1.8rem;
+          word-spacing: 0.2rem;
+        }
+        .green{
+          color: $green;
+          font-weight: map-get($map: $font-weights, $key: 'bold');
+        }
+      }
+    }
+    .stream {
+      table,
+      td {
+        border: 1px solid $white;
+        border-collapse: collapse;
+      }
+      td{
+        padding: 2rem;
+        a{
+          font-size: 2rem;
+        }
+      }
+    }
+    .tracklist {
+      i{
+        pointer-events: initial;
+      }
+      table{
+        width: 100%;
+        font-size: 1.8rem;
+      }
+      td{
+        padding: 1rem 0.5rem;
+      }
+      td:has(.track-info){
         @include flex-row;
+        align-items: center;
+        gap: 2rem;
+        i{
+          font-size: 3.6rem;
+        }
+        .artist{
+          font-size: 1.4rem;
+        }
+      }
+      td:has(.time),td:has(.share){
+        width: 8%;
+      }
+      td:has(.number){
+        width: 3%;
       }
     }
-    &-image {
-      img {
-        width: 40.8rem;
+    .video {
+      margin-bottom: 7rem;
+      &-content{
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+    }
+    >*:has(h1){
+      h1{
+        margin-bottom: 3.5rem;
       }
     }
   }
-  .stream {
-    table,
-    td {
-      border: 1px solid $white;
-      border-collapse: collapse;
-    }
-  }
-  .tracklist {
-  }
-  .video {
+  h1 {
+    @extend .upcase;
+    font-weight: map-get($map: $font-weights, $key: 'regular');
+    font-size: 4.2rem;
+    letter-spacing: 0.2rem;
   }
 }
 
 footer {
+  .divider{
+    border-top: 1px solid $white;
+    margin: 6rem 0;
+  }
   .links {
-    @include flex-row;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     > * {
       flex: 1;
     }
     ul {
+      @extend .upcase;
+      font-size: 1.8rem;
+      @include flex-column;
+      gap: 1rem;
+      letter-spacing: 0.1rem;
     }
     &-email {
+      @include flex-column;
+      gap: 2rem;
+      span{
+        color: $light-gray;
+      }
+      p{
+        font-style: italic;
+        font-size: 1.6rem;
+        font-weight: map-get($map: $font-weights, $key: 'regular')
+      }
+      form{
+        @include flex-row;
+        border-bottom: 1px solid $dark-gray;
+        font-size: 1.8rem;
+        padding-bottom: 1rem;
+        input{
+          all:unset;
+          width: 90%;
+        }
+        button{
+          text-align: center;
+          padding: 0.5rem 1rem;
+          width: 10%;
+          &:hover{
+            background-color: $white;
+            color: $black;
+          }
+        }
+      }
     }
   }
   .contact {
     @include flex-row;
+    justify-content: space-between;
+    div{
+      font-weight: map-get($map: $font-weights, $key: 'regular');
+      font-size: 1.8rem;
+      font-style: italic;
+      letter-spacing: 0.1rem;
+    }
     ul {
       @include flex-row;
+      font-size: 2.4rem;
+      gap: 1.5rem;
     }
+  }
+  .autro{
+    @include flex-column;
+    gap: 2rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    padding: 10rem 18rem;
   }
 }
 
