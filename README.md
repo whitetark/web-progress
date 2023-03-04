@@ -1,6 +1,6 @@
 # Web Development Progress
 
-Hey! I started learning Web Development intensively at 25.01.2022. You can find my progress there and some links!
+Hey! I started learning Web Development intensively at 25.01.2022. You can find my progress here and some links!
 
 1. [Introduction to Front-End Development course by Meta](https://www.coursera.org/learn/introduction-to-front-end-development) (25.01.2023 - 27.01.2023) [[Certificate]](https://www.coursera.org/account/accomplishments/certificate/NCFZ3EXRWYH5)
 2. [Programming with JavaScript course by Meta](https://www.coursera.org/learn/programming-with-javascript) (27.01.2023 - 01.02.2023) [[Certificate]](https://www.coursera.org/account/accomplishments/certificate/XLMFE9SARJBC)
@@ -34,3 +34,9 @@ Hey! I started learning Web Development intensively at 25.01.2022. You can find 
 | 08 | Launch Countdown Timer | Plans | [Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-) |
 | 09 | Todo App | Plans | [Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) |
 | 10 | Space Tourism Multipage Website | Plans | [Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) |
+
+5. [FrontendPractice.com practice](https://www.frontendpractice.com/) (03.03.2023 - xx.xx.xxxx)
+
+| Number | Name | Date | Links |
+| ----------- | :----------- | :----------- | :----------- |
+| 01 | Monstercat | 03.03.2023 - xx.xx.xxxx | [Live](https://deploy-preview-6--helpful-mochi-179732.netlify.app/practice/frontend-practice/01.monstercat-album-release-page/), [Code](https://github.com/whitetark/web-progress/tree/fepractice.com/practice/frontend-practice/01.monstercat-album-release-page), [Mentor](https://www.frontendpractice.com/projects/monstercat) |
