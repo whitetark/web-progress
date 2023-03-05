@@ -43,6 +43,7 @@ body {
   background-image: url(../images/background-tile.webp);
   background-repeat: repeat;
   color: #fdfdfd;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -64,7 +65,8 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.upcase, footer .links ul, main h1 {
+.upcase, footer .links ul, main h1, header .navigation-bar-footer-loginregister, header .navigation-bar-content a,
+header .navigation-bar-content span {
   font-family: "Monument Extended", sans-serif;
   text-transform: uppercase;
 }
@@ -98,7 +100,7 @@ section {
   margin: 0 auto;
   position: relative;
 }
-section.header-content {
+section.header-bar {
   max-width: 140rem;
 }
 section.main-content, section.footer-content {
@@ -132,9 +134,114 @@ header .header-bar ul {
   font-size: 2rem;
   pointer-events: initial;
 }
-header .header-bar .menu-button {
+header .header-bar #menu-button {
   font-size: 3rem;
 }
+header .navigation {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+header .navigation.active {
+  pointer-events: initial;
+}
+header .navigation.active .navigation-bar {
+  transform: translateX(-100%);
+}
+header .navigation-bar {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 3.2rem;
+  top: -7rem;
+  left: 100%;
+  z-index: 1;
+  width: 42rem;
+  height: 100vh;
+  transform: translateX(0%);
+  transition: transform 0.3s;
+  overflow: hidden;
+  background-color: #000000;
+}
+header .navigation-bar-header {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .navigation-bar-header i {
+  font-size: 3.6rem;
+}
+header .navigation-bar-header img {
+  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(187deg) brightness(106%) contrast(101%);
+  width: 18rem;
+}
+header .navigation-bar-content {
+  margin-top: 6rem;
+}
+header .navigation-bar-content > ul {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+header .navigation-bar-content > ul li button {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+header .navigation-bar-content > ul li .dropdown {
+  display: none;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+header .navigation-bar-content > ul li .dropdown ul {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+header .navigation-bar-content > ul li .dropdown ul a {
+  color: #898888;
+}
+header .navigation-bar-content > ul li .dropdown ul a:hover {
+  color: #fdfdfd;
+  transition: color 15ms ease-in;
+}
+header .navigation-bar-content > ul li.dr-active button i {
+  transform: rotate(90deg);
+}
+header .navigation-bar-content > ul li.dr-active .dropdown {
+  display: block;
+}
+header .navigation-bar-footer {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 2rem;
+}
+header .navigation-bar-footer ul {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  font-size: 2.2rem;
+  gap: 1.5rem;
+}
+header .navigation-bar-footer-loginregister button.border {
+  border: 1px solid #fdfdfd;
+  padding: 0.75rem 2rem;
+}
+header .navigation-bar-footer-loginregister button.border:hover {
+  color: #000000;
+  background-color: #fdfdfd;
+  transition: 0.15ms ease-in-out;
+}
+
 main {
   margin-top: 11rem;
 }
@@ -182,8 +289,8 @@ main .main-content .hero-content-buttons button {
   text-align: center;
 }
 main .main-content .hero-content-buttons button.green {
-  background-color: #50A584;
-  border-color: #50A584;
+  background-color: #50a584;
+  border-color: #50a584;
   letter-spacing: 0.1rem;
 }
 main .main-content .hero-content-buttons button:hover {
@@ -209,7 +316,7 @@ main .main-content .hero-image p {
   word-spacing: 0.2rem;
 }
 main .main-content .hero-image .green {
-  color: #50A584;
+  color: #50a584;
   font-weight: 600;
 }
 main .main-content .stream table,
@@ -359,7 +466,7 @@ footer .autro {
     margin: 0 auto;
     position: relative;
   }
-  section.header-content {
+  section.header-bar {
     max-width: 128rem;
   }
   section.main-content, section.footer-content {
@@ -415,7 +522,7 @@ footer .autro {
     -webkit-text-stroke-color: unset;
     -webkit-text-fill-color: unset;
   }
-  section.header-content {
+  section.header-bar {
     max-width: 128rem;
   }
   section.main-content, section.footer-content {
