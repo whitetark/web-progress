@@ -24,13 +24,23 @@ body {
   color: $white;
 }
 
+::-webkit-scrollbar{
+  width: 8px;
+  &-thumb{
+    background-color: $light-gray;
+    &:hover{
+      background-color: $white;
+    }
+  }
+  &-track{
+    background-color: $black;
+  }
+}
+
 .text-stroke{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $white;
     -webkit-text-fill-color: transparent;
-    text-stroke-width: 1px;
-    text-stroke-color: $white;
-    text-fill-color: transparent;
 }
 .upcase{
   font-family: 'Monument Extended', sans-serif;
@@ -81,7 +91,7 @@ header {
     @include flex-row;
     align-items: center;
     justify-content: space-between;
-    padding: 2.4rem 1.5rem;
+    padding: 1rem 1.5rem;
     .logo {
       img {
         width: 5rem;
@@ -112,7 +122,7 @@ main {
     .hero {
       @include flex-row;
       align-items: center;
-      gap: 9rem;
+      gap: 10rem;
       &-content {
         @include flex-column;
         gap: 7rem;
@@ -149,8 +159,6 @@ main {
       }
       &-image {
         position: relative;
-        max-width: 55rem;
-        max-height: 51.2rem;
         padding-left: 2rem;
         img {
           max-width: 40.8rem;
@@ -188,33 +196,34 @@ main {
       i{
         pointer-events: initial;
       }
-      table{
-        width: 100%;
-        font-size: 1.8rem;
-      }
-      td{
-        padding: 1rem 0.5rem;
-      }
-      td:has(.track-info){
-        @include flex-row;
-        align-items: center;
+      &-grid{
+        display: grid;
+        grid-template-rows: 1fr;
         gap: 2rem;
-        i{
-          font-size: 3.6rem;
+        &-item{
+          display: grid;
+          grid-template-columns: 1fr 11fr 1fr 1fr;
+          align-items: center;
+          justify-items: center;
+          >div{
+            @include flex-row;
+            gap: 2rem;
+            justify-self: flex-start;
+            .track-info{
+              @include flex-column;
+              .artist{
+                font-size: 1.4rem;
+              }
+            }
+            i{
+              font-size: 3.6rem;
+            }
+          }
         }
-        .artist{
-          font-size: 1.4rem;
-        }
-      }
-      td:has(.time),td:has(.share){
-        width: 8%;
-      }
-      td:has(.number){
-        width: 3%;
       }
     }
     .video {
-      margin-bottom: 7rem;
+      margin-bottom: 4rem;
       &-content{
         aspect-ratio: 16/9;
         width: 100%;
@@ -244,10 +253,7 @@ footer {
   .links {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    > * {
-      flex: 1;
-    }
+    gap: 1rem;
     ul {
       @extend .upcase;
       font-size: 1.8rem;
@@ -292,12 +298,13 @@ footer {
     justify-content: space-between;
     div{
       font-weight: map-get($map: $font-weights, $key: 'regular');
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       font-style: italic;
       letter-spacing: 0.1rem;
     }
     ul {
-      @include flex-row;
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
       font-size: 2.4rem;
       gap: 1.5rem;
     }
@@ -308,7 +315,40 @@ footer {
     font-size: 1.2rem;
     font-style: italic;
     text-align: center;
-    padding: 10rem 18rem;
+    padding: 5rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  section {
+    margin: 0 auto;
+    position: relative;
+    &.header-content {
+      max-width: 128rem;
+    }
+    &.main-content,
+    &.footer-content {
+      max-width: 100rem;
+    }
+    &:where(.main-content), &:where(.footer-content){
+      padding: 0 2rem;
+    }
+  }
+
+  main{
+    .main-content{
+      .hero{
+        gap: 6rem;
+        &-content{
+          .name-title{
+            font-size: 3.6rem;
+            span:where(.text-stroke) {
+              font-size: 3.6rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -327,12 +367,134 @@ footer {
   }
 }
 
+@media only screen and (max-width: 992px){
+  main{
+    .main-content{
+      gap:5rem;
+      .hero{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem;
+        &-image{
+          align-self: center;
+          img{
+            max-width: 71.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 775px){
+  .text-stroke {
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: unset;
+    -webkit-text-fill-color: unset;
+}
+
+  section {
+    &.header-content {
+      max-width: 128rem;
+    }
+    &.main-content,
+    &.footer-content {
+      max-width: 53.2rem;
+    }
+  }
+  main{
+    .main-content{
+      .hero{
+        &-image{
+          display: flex;
+          flex-direction: column-reverse;
+          padding-left: 0;
+          gap: 5rem;
+          p{
+            position: relative;
+            left: 0;
+            bottom: 0;
+            writing-mode: horizontal-tb;
+            transform: rotate(0deg);
+          }
+          img{
+            max-width: 100%;
+          }
+        }
+        &-content{
+          gap: 3rem;
+          .name-title{
+            gap: 1rem;
+            font-size: 2.2rem;
+            span:where(.text-stroke) {
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+      .stream{
+        td{
+          padding: 1rem;
+        }
+      }
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  footer{
+    .links{
+      grid-template-columns: repeat(1, minmax(0,1fr));
+      gap: 0rem;
+      a{
+        font-size: 1.4rem;
+      }
+      ul{
+        gap: 0rem;
+      }
+      font-size: 1.4rem;
+      &-email{
+        margin-top: 5rem;
+      }
+    }
+    .contact{
+      flex-direction: column;
+      gap: 2rem;
+      ul{
+        grid-template-columns: repeat(auto-fill, 1.8rem);
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 535px) {
   header {
     .header-bar {
       ul {
         display: none;
       }
+    }
+  }
+  main{
+    .main-content{
+      .hero{
+        &-image{
+          p{
+            font-size: 1.4rem;
+          }
+        }
+        &-content{
+          .name-title{
+            font-size: 1.8rem;
+            span:where(.text-stroke){
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+    }
+    h1{
+      font-size: 2.2rem;
     }
   }
 }

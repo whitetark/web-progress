@@ -45,13 +45,23 @@ body {
   color: #fdfdfd;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #898888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fdfdfd;
+}
+::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
 .text-stroke {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fdfdfd;
   -webkit-text-fill-color: transparent;
-  text-stroke-width: 1px;
-  text-stroke-color: #fdfdfd;
-  text-fill-color: transparent;
 }
 
 .upcase, footer .links ul, main h1 {
@@ -106,7 +116,7 @@ header .header-bar {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 2.4rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 header .header-bar .logo img {
   width: 5rem;
@@ -139,7 +149,7 @@ main .main-content .hero {
   display: -webkit-flex;
   flex-direction: row;
   align-items: center;
-  gap: 9rem;
+  gap: 10rem;
 }
 main .main-content .hero-content {
   display: flex;
@@ -183,8 +193,6 @@ main .main-content .hero-content-buttons button:hover {
 }
 main .main-content .hero-image {
   position: relative;
-  max-width: 55rem;
-  max-height: 51.2rem;
   padding-left: 2rem;
 }
 main .main-content .hero-image img {
@@ -218,34 +226,37 @@ main .main-content .stream td a {
 main .main-content .tracklist i {
   pointer-events: initial;
 }
-main .main-content .tracklist table {
-  width: 100%;
-  font-size: 1.8rem;
+main .main-content .tracklist-grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 2rem;
 }
-main .main-content .tracklist td {
-  padding: 1rem 0.5rem;
+main .main-content .tracklist-grid-item {
+  display: grid;
+  grid-template-columns: 1fr 11fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
 }
-main .main-content .tracklist td:has(.track-info) {
+main .main-content .tracklist-grid-item > div {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
-  align-items: center;
   gap: 2rem;
+  justify-self: flex-start;
 }
-main .main-content .tracklist td:has(.track-info) i {
-  font-size: 3.6rem;
+main .main-content .tracklist-grid-item > div .track-info {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
 }
-main .main-content .tracklist td:has(.track-info) .artist {
+main .main-content .tracklist-grid-item > div .track-info .artist {
   font-size: 1.4rem;
 }
-main .main-content .tracklist td:has(.time), main .main-content .tracklist td:has(.share) {
-  width: 8%;
-}
-main .main-content .tracklist td:has(.number) {
-  width: 3%;
+main .main-content .tracklist-grid-item > div i {
+  font-size: 3.6rem;
 }
 main .main-content .video {
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 }
 main .main-content .video-content {
   aspect-ratio: 16/9;
@@ -269,9 +280,7 @@ footer .divider {
 footer .links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-footer .links > * {
-  flex: 1;
+  gap: 1rem;
 }
 footer .links ul {
   font-size: 1.8rem;
@@ -324,14 +333,13 @@ footer .contact {
 }
 footer .contact div {
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-style: italic;
   letter-spacing: 0.1rem;
 }
 footer .contact ul {
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
   font-size: 2.4rem;
   gap: 1.5rem;
 }
@@ -343,9 +351,33 @@ footer .autro {
   font-size: 1.2rem;
   font-style: italic;
   text-align: center;
-  padding: 10rem 18rem;
+  padding: 5rem 2rem;
 }
 
+@media only screen and (max-width: 1400px) {
+  section {
+    margin: 0 auto;
+    position: relative;
+  }
+  section.header-content {
+    max-width: 128rem;
+  }
+  section.main-content, section.footer-content {
+    max-width: 100rem;
+  }
+  section:where(.main-content), section:where(.footer-content) {
+    padding: 0 2rem;
+  }
+  main .main-content .hero {
+    gap: 6rem;
+  }
+  main .main-content .hero-content .name-title {
+    font-size: 3.6rem;
+  }
+  main .main-content .hero-content .name-title span:where(.text-stroke) {
+    font-size: 3.6rem;
+  }
+}
 @media only screen and (max-width: 1185px) {
   header .header-bar {
     background-color: rgba(0, 0, 0, 0.4392156863);
@@ -361,8 +393,102 @@ footer .autro {
     right: 0;
   }
 }
+@media only screen and (max-width: 992px) {
+  main .main-content {
+    gap: 5rem;
+  }
+  main .main-content .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+  main .main-content .hero-image {
+    align-self: center;
+  }
+  main .main-content .hero-image img {
+    max-width: 71.2rem;
+  }
+}
+@media only screen and (max-width: 775px) {
+  .text-stroke {
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: unset;
+    -webkit-text-fill-color: unset;
+  }
+  section.header-content {
+    max-width: 128rem;
+  }
+  section.main-content, section.footer-content {
+    max-width: 53.2rem;
+  }
+  main .main-content .hero-image {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 0;
+    gap: 5rem;
+  }
+  main .main-content .hero-image p {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+  }
+  main .main-content .hero-image img {
+    max-width: 100%;
+  }
+  main .main-content .hero-content {
+    gap: 3rem;
+  }
+  main .main-content .hero-content .name-title {
+    gap: 1rem;
+    font-size: 2.2rem;
+  }
+  main .main-content .hero-content .name-title span:where(.text-stroke) {
+    font-size: 2.2rem;
+  }
+  main .main-content .stream td {
+    padding: 1rem;
+  }
+  main h1 {
+    font-size: 3rem;
+  }
+  footer .links {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0rem;
+    font-size: 1.4rem;
+  }
+  footer .links a {
+    font-size: 1.4rem;
+  }
+  footer .links ul {
+    gap: 0rem;
+  }
+  footer .links-email {
+    margin-top: 5rem;
+  }
+  footer .contact {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  footer .contact ul {
+    grid-template-columns: repeat(auto-fill, 1.8rem);
+  }
+}
 @media only screen and (max-width: 535px) {
   header .header-bar ul {
     display: none;
+  }
+  main .main-content .hero-image p {
+    font-size: 1.4rem;
+  }
+  main .main-content .hero-content .name-title {
+    font-size: 1.8rem;
+  }
+  main .main-content .hero-content .name-title span:where(.text-stroke) {
+    font-size: 2.2rem;
+  }
+  main h1 {
+    font-size: 2.2rem;
   }
 }/*# sourceMappingURL=style.css.map */
