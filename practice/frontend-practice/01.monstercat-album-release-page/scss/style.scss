@@ -125,6 +125,7 @@ header {
   }
   .navigation-bar {
     @include flex-column;
+    gap: 2rem;
     position: absolute;
     padding: 3.2rem;
     top: -7rem;
@@ -149,7 +150,8 @@ header {
       }
     }
     &-content {
-      margin-top: 6rem;
+      margin-top: 4rem;
+      overflow: auto;
       > ul {
         @include flex-column;
         gap: 2.5rem;

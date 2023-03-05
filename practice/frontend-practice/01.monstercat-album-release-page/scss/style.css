@@ -153,6 +153,7 @@ header .navigation-bar {
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
+  gap: 2rem;
   position: absolute;
   padding: 3.2rem;
   top: -7rem;
@@ -179,7 +180,8 @@ header .navigation-bar-header img {
   width: 18rem;
 }
 header .navigation-bar-content {
-  margin-top: 6rem;
+  margin-top: 4rem;
+  overflow: auto;
 }
 header .navigation-bar-content > ul {
   display: flex;
