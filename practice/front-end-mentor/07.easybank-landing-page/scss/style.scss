@@ -1,0 +1,77 @@
+@import 'mixins';
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+$colors: (
+  'dark-blue': hsl(233, 26%, 24%),
+  'lime-green': hsl(136, 65%, 51%),
+  'bright-cyan': hsl(192, 70%, 51%),
+  'grayish-blue': hsl(233, 8%, 62%),
+  'light-grayish-blue': hsl(220, 16%, 96%),
+  'very-light-gray': hsl(0, 0%, 98%),
+  'white': hsl(0, 0%, 100%),
+);
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'bold': 700,
+);
+
+body{
+    font-size: 1.8rem;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: map-get($map: $font-weights, $key: 'light');
+    line-height: 1.1;
+}
+
+header{
+    .header{
+        @include flex-row;
+        justify-content: space-between;
+        align-items: center;
+        &-logo{
+
+        }
+        &-links{
+            ul{
+                @include flex-row;
+            }
+        }
+        &-button{
+
+        }
+    }
+}
+main{
+    .hero{
+        @include flex-row;
+        align-items: center;
+        &-content{
+
+        }
+        &-image{
+
+        }
+    }
+    .pros{
+        &-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30rem,1fr));
+        }
+    }
+    .articles{
+        &-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30rem,1fr));
+        }
+    }
+}
+footer{
+    .footer-design{
+        @include flex-row;
+        div{
+            @include flex-column;
+        }
+    }
+}

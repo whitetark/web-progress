@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+header .header {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-links ul {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+main .hero {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+}
+main .pros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+}
+main .articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+}
+
+footer .footer-design {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+footer .footer-design div {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}/*# sourceMappingURL=style.css.map */
