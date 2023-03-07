@@ -1,0 +1,30 @@
+.pros-div{
+  background-color: $light-grayish-blue;
+}
+
+.pros {
+  @include flex-column;
+    h2{
+      font-size: 3.6rem;
+    }
+    &-grid {
+      display: flex;
+      flex-wrap: wrap;
+      &-item{
+        @include flex-column;
+        margin: 1.5rem;
+        gap: 4.4rem;
+        flex: 1;
+        &-content{
+          @include flex-column;
+          gap: 2rem;
+          h3{
+          font-size: 2.4rem;
+          }
+          p{
+            font-size: $font-sm;
+          }
+        }
+      }
+    }
+  }

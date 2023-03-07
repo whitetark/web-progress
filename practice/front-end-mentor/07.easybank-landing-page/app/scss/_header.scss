@@ -1,0 +1,50 @@
+header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: $white;
+  .header {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+    &-logo {
+      img {
+        min-width: 100%;
+        max-width: unset;
+      }
+    }
+    &-links {
+      ul {
+        @include flex-row;
+        gap: 3rem;
+        font-size: $font-sm;
+        font-weight: $regular-weight;
+        a {
+          position: relative;
+          color: $grayish-blue;
+          &:hover {
+            &::before{
+              opacity: 1;
+            }
+          }
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 5px;
+            left: 0;
+            right: 0;
+            bottom: -3.4rem;
+            background: linear-gradient(90deg, $lime-green, $bright-cyan);
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+          }
+        }
+      }
+    }
+    &-button {
+      @extend .gradient-button;
+    }
+  }
+}

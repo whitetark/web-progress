@@ -11,6 +11,24 @@
   #{$property}: $val;
 }
 
+// 640px, 1024px, 1400px
+$breakpoints-up: ("medium": "64rem", "large": "102.4rem", "xlarge": "140rem");
+
+// 639px, 1023px, 1399px
+$breakpoints-down: ("small": "64.9rem", "medium": "102.3rem", "large": "139.9rem");
+
+@mixin breakpoint-up($size){
+  @media (min-width: map-get($breakpoints-up, $size)){
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size){
+  @media (max-width: map-get($breakpoints-down, $size)){
+    @content;
+  }
+}
+
 @mixin flex-row {
   display: flex;
   display: -ms-flexbox;
