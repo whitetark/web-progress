@@ -44,6 +44,20 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+::-webkit-scrollbar-track {
+  background-color: hsl(0, 0%, 98%);
+}
+
 .gradient-button, footer .footer-design div button, .hero-content button, header .header-button {
   color: hsl(0, 0%, 100%);
   background-image: linear-gradient(90deg, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
@@ -63,7 +77,7 @@ section {
   margin: 0 auto;
 }
 section.main-container {
-  padding: 10rem 0;
+  padding: 10rem 2rem;
   gap: 3.6rem;
 }
 section.main-container p {
@@ -95,9 +109,26 @@ h3 {
 
 header {
   position: sticky;
-  z-index: 1;
   top: 0;
   background-color: hsl(0, 0%, 100%);
+  z-index: 101;
+}
+header .overlay {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(black, transparent);
+  opacity: 0.5;
+  top: 6rem;
+  display: none;
+}
+@media (max-width: 44.9rem) {
+  header .overlay.active {
+    display: block;
+  }
 }
 header .header {
   display: flex;
@@ -117,11 +148,11 @@ header .header-links ul {
   flex-direction: row;
   gap: 3rem;
   font-size: 1.4rem;
-  font-weight: 400;
 }
 header .header-links ul a {
   position: relative;
   color: hsl(233, 8%, 62%);
+  font-weight: 400;
 }
 header .header-links ul a:hover::before {
   opacity: 1;
@@ -138,6 +169,50 @@ header .header-links ul a::before {
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 }
+header .header-menu {
+  display: none;
+}
+@media (max-width: 44.9rem) {
+  header .header-button {
+    display: none;
+  }
+  header .header-menu {
+    display: block;
+  }
+  header .header-menu.active img {
+    content: url(/images/icon-close.svg);
+  }
+  header .header-links {
+    display: none;
+    position: absolute;
+    left: 3rem;
+    right: 3rem;
+    top: 9rem;
+  }
+  header .header-links ul {
+    position: relative;
+    background-color: hsl(0, 0%, 100%);
+    padding: 4rem;
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  header .header-links ul li {
+    align-self: center;
+  }
+  header .header-links ul li a {
+    color: hsl(233, 26%, 24%);
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+  header .header-links ul li a::before {
+    bottom: -0.5rem;
+  }
+  header .header-links.active {
+    display: block;
+  }
+}
+
 .hero-div {
   background-color: hsl(0, 0%, 98%);
 }
@@ -166,6 +241,17 @@ header .header-links ul a::before {
   height: 65.6rem;
   background-image: none;
 }
+@media (max-width: 63.9rem) {
+  .hero {
+    flex-direction: column-reverse;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  .hero-content button {
+    align-self: center;
+  }
+}
 
 .pros-div {
   background-color: hsl(220, 16%, 96%);
@@ -180,8 +266,8 @@ header .header-links ul a::before {
   font-size: 3.6rem;
 }
 .pros-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 .pros-grid-item {
   display: flex;
@@ -189,7 +275,6 @@ header .header-links ul a::before {
   flex-direction: column;
   margin: 1.5rem;
   gap: 4.4rem;
-  flex: 1;
 }
 .pros-grid-item-content {
   display: flex;
@@ -202,6 +287,22 @@ header .header-links ul a::before {
 }
 .pros-grid-item-content p {
   font-size: 1.4rem;
+}
+@media (max-width: 63.9rem) {
+  .pros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 44.9rem) {
+  .pros-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pros-grid-item {
+    align-items: center;
+  }
+  .pros-grid-item-content {
+    text-align: center;
+  }
 }
 
 .articles-div {
@@ -242,21 +343,35 @@ header .header-links ul a::before {
   color: hsl(136, 65%, 51%);
 }
 .articles-grid-item-image {
-  -o-object-fit: cover;
-     object-fit: cover;
+  overflow: hidden;
+  height: 20rem;
 }
 .articles-grid-item-image img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 20rem;
 }
 .articles-grid-item:hover {
   transform: scale(1.05);
   transition: 200ms ease-in-out;
 }
+@media (max-width: 63.9rem) {
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 44.9rem) {
+  .articles-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 footer a {
   color: hsl(0, 0%, 100%);
+}
+footer a:hover {
+  color: hsl(136, 65%, 51%);
 }
 footer .design-div {
   background-color: hsl(233, 26%, 24%);
@@ -269,16 +384,16 @@ footer .fementor-div {
 footer .footer-design {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 3fr;
-  grid-template-rows: 1fr auto;
-  gap: 2rem;
   align-items: center;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
 }
 footer .footer-design > ul {
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 footer .footer-design > ul a {
   font-size: 1.5rem;
@@ -306,10 +421,26 @@ footer .footer-design div button {
 footer .footer-design > :last-child {
   margin-left: auto;
 }
+@media (max-width: 44.9rem) {
+  footer .footer-design {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+  }
+  footer .footer-design > ul {
+    align-items: center;
+  }
+  footer .footer-design div {
+    align-items: center;
+  }
+  footer .footer-design div button {
+    align-self: center;
+  }
+  footer .footer-design > :last-child {
+    margin-left: 0;
+  }
+}
 footer .footer-fementor {
   text-align: center;
   padding: 3rem 2rem;
-}
-footer .footer-fementor a:hover {
-  color: hsl(136, 65%, 51%);
 }/*# sourceMappingURL=style.css.map */

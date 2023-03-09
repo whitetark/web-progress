@@ -22,4 +22,13 @@
     height: 65.6rem;
     background-image: none;
   }
+  @include breakpoint-down('medium'){
+    flex-direction: column-reverse;
+    &-content{
+      text-align: center;
+      button{
+        align-self: center;
+      }
+    }
+  }
 }

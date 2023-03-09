@@ -11,20 +11,26 @@
   #{$property}: $val;
 }
 
-// 640px, 1024px, 1400px
-$breakpoints-up: ("medium": "64rem", "large": "102.4rem", "xlarge": "140rem");
+$breakpoints-up: (
+  'medium': '45rem',
+  'large': '64rem',
+  'xlarge': '87.5rem',
+);
 
-// 639px, 1023px, 1399px
-$breakpoints-down: ("small": "64.9rem", "medium": "102.3rem", "large": "139.9rem");
+$breakpoints-down: (
+  'small': '44.9rem',
+  'medium': '63.9rem',
+  'large': '87.4rem',
+);
 
-@mixin breakpoint-up($size){
-  @media (min-width: map-get($breakpoints-up, $size)){
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
     @content;
   }
 }
 
-@mixin breakpoint-down($size){
-  @media (max-width: map-get($breakpoints-down, $size)){
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
     @content;
   }
 }
@@ -41,4 +47,15 @@ $breakpoints-down: ("small": "64.9rem", "medium": "102.3rem", "large": "139.9rem
   display: -ms-flexbox;
   display: -webkit-flex;
   flex-direction: column;
+}
+
+@mixin overlay {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(black, transparent);
+  opacity: 0.5;
 }

@@ -8,13 +8,12 @@
       font-size: 3.6rem;
     }
     &-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       &-item{
         @include flex-column;
         margin: 1.5rem;
         gap: 4.4rem;
-        flex: 1;
         &-content{
           @include flex-column;
           gap: 2rem;
@@ -23,6 +22,18 @@
           }
           p{
             font-size: $font-sm;
+          }
+        }
+      }
+      @include breakpoint-down('medium'){
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include breakpoint-down('small'){
+        grid-template-columns: repeat(1, 1fr);
+        &-item{
+          align-items: center;
+          &-content{
+            text-align: center;
           }
         }
       }

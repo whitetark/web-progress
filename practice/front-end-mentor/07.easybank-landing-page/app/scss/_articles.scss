@@ -31,10 +31,12 @@
         }
       }
       &-image{
-        object-fit: cover;
+        overflow: hidden;
+        height: 20rem;
         img{
+          width: 100%;
+          height: 100%;
           object-fit: cover;
-          height: 20rem;
         }
       }
       &:hover{
@@ -42,5 +44,12 @@
         transition: 200ms ease-in-out;
       }
     }
+
+    @include breakpoint-down('medium'){
+      grid-template-columns: repeat(2, 1fr);
+    }
+          @include breakpoint-down('small'){
+        grid-template-columns: repeat(1, 1fr);
+      }
   }
 }

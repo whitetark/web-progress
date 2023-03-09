@@ -1,8 +1,20 @@
 header {
   position: sticky;
-  z-index: 1;
   top: 0;
   background-color: $white;
+  z-index: 101;
+
+  .overlay{
+    @include overlay;
+    top: 6rem;
+    display: none;
+    @include breakpoint-down('small'){
+      &.active{
+      display: block;
+    }
+    }
+  }
+
   .header {
     @include flex-row;
     justify-content: space-between;
@@ -19,12 +31,12 @@ header {
         @include flex-row;
         gap: 3rem;
         font-size: $font-sm;
-        font-weight: $regular-weight;
         a {
           position: relative;
           color: $grayish-blue;
+          font-weight: $regular-weight;
           &:hover {
-            &::before{
+            &::before {
               opacity: 1;
             }
           }
@@ -45,6 +57,53 @@ header {
     }
     &-button {
       @extend .gradient-button;
+    }
+    &-menu{
+      display: none;
+    }
+
+    @include breakpoint-down('small') {
+      &-button {
+        display: none;
+      }
+      &-menu{
+        display: block;
+        &.active{
+          img{
+            content: url(/images/icon-close.svg);
+          }
+        }
+      }
+      &-links {
+        display: none;
+        position: absolute;
+        left: 3rem;
+        right: 3rem;
+        top: 9rem;
+
+        ul {
+          position: relative;
+          background-color: $white;
+          padding: 4rem;
+          border-radius: 5px;
+          flex-direction: column;
+          gap: 1rem;
+          li {
+            align-self: center;
+            a {
+              color: $dark-blue;
+              font-weight: $bold-weight;
+              font-size: $font-med;
+              &::before {
+                bottom: -0.5rem;
+              }
+            }
+          }
+        }
+        &.active{
+          display: block;
+        }
+      }
     }
   }
 }

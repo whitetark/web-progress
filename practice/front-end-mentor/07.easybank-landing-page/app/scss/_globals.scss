@@ -9,6 +9,20 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  &-thumb {
+    background-image: linear-gradient($lime-green, $bright-cyan);
+    border-radius: 20px;
+    &:hover {
+      background-color: $white;
+    }
+  }
+  &-track {
+    background-color: $very-light-gray;
+  }
+}
+
 .gradient-button {
   color: $white;
   background-image: linear-gradient(90deg, $lime-green, $bright-cyan);
@@ -26,7 +40,7 @@ section {
   max-width: 106rem;
   margin: 0 auto;
   &.main-container{
-    padding: 10rem 0;
+    padding: 10rem 2rem;
     gap: 3.6rem;
     p{
       font-size: $font-sm;
