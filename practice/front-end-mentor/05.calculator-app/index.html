@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="scss/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="calculator">
+        <section class="headings">
+          <div class="headings-logo">
+            <span>calc</span>
+          </div>
+          <section class="headings-theme">
+            <span>THEME</span>
+            <div class="theme-changer">
+              <span>1 2 3</span>
+              <form>
+              <input
+                type="radio"
+                name="theme"
+                id="dark"
+                checked="checked"
+                onchange="toggleTheme(this)"
+              />
+              <input type="radio" name="theme" id="light" onchange="toggleTheme(this)" />
+              <input type="radio" name="theme" id="purple" onchange="toggleTheme(this)" />
+            </form>
+          </div>
+          </section>
+        </section>
+        <section class="screen">
+          <form>
+            <input type="text" name="result" id="result" size="1" value="0" readonly />
+          </form>
+        </section>
+        <section class="keyboard">
+          <button style="grid-area: I7" onclick="typing(this)">7</button>
+          <button style="grid-area: I8" onclick="typing(this)">8</button>
+          <button style="grid-area: I9" onclick="typing(this)">9</button>
+          <button class="func" style="grid-area: Idel" onclick="typing(this)">DEL</button>
+          <button style="grid-area: I4" onclick="typing(this)">4</button>
+          <button style="grid-area: I5" onclick="typing(this)">5</button>
+          <button style="grid-area: I6" onclick="typing(this)">6</button>
+          <button style="grid-area: Iplus" onclick="typing(this)">+</button>
+          <button style="grid-area: I1" onclick="typing(this)">1</button>
+          <button style="grid-area: I2" onclick="typing(this)">2</button>
+          <button style="grid-area: I3" onclick="typing(this)">3</button>
+          <button style="grid-area: Iminus" onclick="typing(this)">-</button>
+          <button style="grid-area: Idot" onclick="typing(this)">.</button>
+          <button style="grid-area: I0" onclick="typing(this)">0</button>
+          <button style="grid-area: Islash" onclick="typing(this)">/</button>
+          <button style="grid-area: Imult" onclick="typing(this)">*</button>
+          <button class="func" style="grid-area: Ireset" onclick="typing(this)">RESET</button>
+          <button class="equal" style="grid-area: Iequal" onclick="typing(this)">=</button>
+        </section>
+      </section>
+    </main>
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.github.com/whitetark">@whitetark</a>.
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>

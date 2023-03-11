@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <link rel="stylesheet" href="scss/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <span>snap</span>
+        <ul class="nav-menu" id="nav-menu">
+          <li id="closeMenu">
+            <button>
+            <img src="images/icon-close-menu.svg" alt="Close Button"/>
+          </button>
+          </li>
+          <li class="nav-menu-button">
+            <button onclick="dropdownActive(this)">
+              <span>Features</span>
+              <img src="images/icon-arrow-down.svg" alt="" class="hover_img" />
+            </button>
+            <div class="dropdown" id="dropdown1">
+              <ul class="dropdown-content">
+                <li>
+                  <a href="#">
+                    <img src="images/icon-todo.svg" alt="" />
+                    Todo List
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="images/icon-calendar.svg" alt="" />
+                    Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="images/icon-reminders.svg" alt="" />
+                    Reminders
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="images/icon-planning.svg" alt="" />
+                    Planning
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-menu-button">
+            <button onclick="dropdownActive(this)">
+              <span>Company</span>
+              <img src="images/icon-arrow-down.svg" alt="" class="hover_img" />
+            </button>
+            <div class="dropdown">
+              <ul class="dropdown-content">
+                <li>
+                  <a href="#"> History </a>
+                </li>
+                <li>
+                  <a href="#"> Our Team </a>
+                </li>
+                <li>
+                  <a href="#"> Blog </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-menu-button">
+            <a href="#"> Careers </a>
+          </li>
+          <li class="nav-menu-button">
+            <a href="#"> About </a>
+          </li>
+          <li class="login-register" id="login-register">
+            <button>Login</button>
+            <button class="border">Register</button>
+          </li>
+        </ul>
+        <button id="checkbtn">
+          <img src="images/icon-menu.svg" alt="Menu Button" />
+        </button>
+      </nav>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="main-container-content">
+          <h1>Make remote work</h1>
+          <p>
+            Get your team in sync, no matter your location. Streamline processes, create team
+            rituals, and watch productivity soar.
+          </p>
+          <button>Learn more</button>
+          <div class="main-container-content-partners">
+            <img src="images/client-databiz.svg" alt="databiz" />
+            <img src="images/client-audiophile.svg" alt="audiophile" />
+            <img src="images/client-meet.svg" alt="meet" />
+            <img src="images/client-maker.svg" alt="maker" />
+          </div>
+        </div>
+        <div class="main-container-photo">
+          <img src="images/image-hero-desktop.png" alt="" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.github.com/whitetark">@whitetark</a>.
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>

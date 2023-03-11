@@ -1,0 +1,55 @@
+.articles-div{
+  background-color: $very-light-gray;
+}
+
+.articles {
+  @include flex-column;
+  gap: 3rem;
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    &-item{
+      background-color: $white;
+      box-shadow: 1px 1px 10px 0 rgba($color: #d4d4d4, $alpha: 1.0);
+      border-radius: 5px;
+      overflow: hidden;
+      transition: 200ms ease-in-out;
+      &-content{
+        @include flex-column;
+        gap: 1rem;
+        padding: 3rem 2.5rem;
+        span{
+          font-size: 1.1rem;
+          font-weight: $bold-weight;
+          color: $grayish-blue;
+        }
+        a:hover{
+          h4{
+            color: $lime-green;
+          }
+        }
+      }
+      &-image{
+        overflow: hidden;
+        height: 20rem;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &:hover{
+        transform: scale(1.05);
+        transition: 200ms ease-in-out;
+      }
+    }
+
+    @include breakpoint-down('medium'){
+      grid-template-columns: repeat(2, 1fr);
+    }
+          @include breakpoint-down('small'){
+        grid-template-columns: repeat(1, 1fr);
+      }
+  }
+}
