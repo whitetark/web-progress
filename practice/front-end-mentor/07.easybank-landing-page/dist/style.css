@@ -261,6 +261,9 @@ header .header-menu {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .hero-wrapper img {
+    margin-bottom: 0;
+  }
 }
 
 .pros-div {
@@ -284,7 +287,7 @@ header .header-menu {
   display: -webkit-flex;
   flex-direction: column;
   margin: 1.5rem;
-  gap: 4.4rem;
+  gap: 3rem;
 }
 .pros-grid-item-content {
   display: flex;
@@ -428,7 +431,11 @@ footer .footer-design div ul {
 footer .footer-design div button {
   align-self: flex-end;
 }
+footer .footer-design > :first-child {
+  margin-bottom: 3rem;
+}
 footer .footer-design > :last-child {
+  margin-top: 3rem;
   margin-left: auto;
 }
 @media (max-width: 44.9rem) {
