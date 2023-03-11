@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: white;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-family: "Archivo Black", sans-serif;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: black;
+}
+
+.clock {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  grid-template-areas: "i1 i3 i5 ." "i2 i4 i6 i7";
+  text-align: center;
+  background-color: #424242;
+  padding: 3rem;
+  border: 15px solid black;
+  border-radius: 30px;
+}
+.clock > * {
+  padding: 1rem 3rem;
+}
+.clock__upper {
+  background-color: #0042c6;
+  font-size: 7.2rem;
+}
+.clock__lower {
+  background-color: #002f8c;
+  font-size: 1.8rem;
+}
+.clock__ampm {
+  background-color: #1e8c00;
+  font-size: 1.8rem;
+}/*# sourceMappingURL=style.css.map */
