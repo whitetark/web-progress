@@ -1,0 +1,116 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  background-color: lightseagreen;
+  height: 100vh;
+}
+
+.clock {
+  display: grid;
+  position: relative;
+  background-color: white;
+  width: 40rem;
+  height: 40rem;
+  font-size: 2.8rem;
+  border-radius: 100%;
+  --clock-padding: 2rem;
+}
+.clock > * {
+  position: absolute;
+}
+.clock__twelve {
+  top: var(--clock-padding);
+  justify-self: center;
+}
+.clock__three {
+  align-self: center;
+  right: var(--clock-padding);
+}
+.clock__six {
+  bottom: var(--clock-padding);
+  justify-self: center;
+}
+.clock__nine {
+  align-self: center;
+  left: var(--clock-padding);
+}
+.clock__center {
+  display: grid;
+  position: relative;
+  place-self: center;
+  width: 28rem;
+  height: 28rem;
+}
+.clock__center > * {
+  position: absolute;
+}
+.clock__dot {
+  background-color: lightseagreen;
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  place-self: center;
+  z-index: 5;
+}
+.clock__arrow {
+  background-color: orange;
+  content: "";
+  width: 0.7rem;
+  height: 50%;
+  top: 0;
+  place-self: center;
+  box-shadow: 1px 1px 2px rgba(153, 153, 153, 0.7);
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom center;
+}
+.clock #hour {
+  height: 30%;
+  top: 20%;
+  z-index: 3;
+}
+.clock #minute {
+  height: 45%;
+  top: 5%;
+  z-index: 2;
+}
+.clock #second {
+  background-color: orangered;
+}/*# sourceMappingURL=style.css.map */

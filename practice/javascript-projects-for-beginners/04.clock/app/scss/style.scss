@@ -1,0 +1,90 @@
+@import 'mixins';
+@import 'reset';
+
+.container {
+  display: grid;
+  place-items: center;
+  background-color: lightseagreen;
+  height: 100vh;
+}
+
+.clock {
+  display: grid;
+  position: relative;
+  background-color: white;
+  width: 40rem;
+  height: 40rem;
+  font-size: 2.8rem;
+  border-radius: 100%;
+  --clock-padding: 2rem;
+  > * {
+    position: absolute;
+  }
+
+  &__twelve {
+    top: var(--clock-padding);
+    justify-self: center;
+  }
+
+  &__three {
+    align-self: center;
+    right: var(--clock-padding);
+  }
+
+  &__six {
+    bottom: var(--clock-padding);
+    justify-self: center;
+  }
+
+  &__nine {
+    align-self: center;
+    left: var(--clock-padding);
+  }
+
+  &__center {
+    display: grid;
+    position: relative;
+    place-self: center;
+    width: 28rem;
+    height: 28rem;
+    > * {
+      position: absolute;
+    }
+  }
+
+  &__dot {
+    background-color: lightseagreen;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    place-self: center;
+    z-index: 5;
+  }
+
+  &__arrow {
+    background-color: orange;
+    content: '';
+    width: 0.7rem;
+    height: 50%;
+    top: 0;
+    place-self: center;
+    box-shadow: 1px 1px 2px rgba(153, 153, 153, 0.7);
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+  }
+
+  #hour {
+    height: 30%;
+    top: 20%;
+    z-index: 3;
+  }
+  #minute {
+    height: 45%;
+    top: 5%;
+    z-index: 2;
+  }
+  #second {
+    background-color: orangered;
+  }
+}
