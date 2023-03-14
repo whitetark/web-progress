@@ -1,0 +1,60 @@
+main {
+  @include flex-column;
+  background-image: url(../../images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    margin-top: 10rem;
+    color: $white;
+    font-size: $font-lg;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(../../images/bg-stars.svg);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, $very-dark-black-blue, $very-dark-blue);
+    z-index: -2;
+  }
+}
+
+.countdown {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.8rem;
+  &__item {
+    @include flex-column;
+    align-items: center;
+  }
+  &__value {
+    color: $soft-red;
+    font-size: $font-xlg;
+  }
+  &__label {
+    color: $grayish-blue;
+    font-size: $font-sm;
+  }
+}
+
+.socials {
+  margin-top: auto;
+  margin-bottom: 4rem;
+  a {
+    color: $grayish-blue;
+    font-size: $font-lg;
+  }
+}
