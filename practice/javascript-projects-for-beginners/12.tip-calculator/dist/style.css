@@ -1,0 +1,80 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: grid;
+  place-items: center;
+  background-color: rgb(228, 228, 228);
+}
+
+.container {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.5rem;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+.container h1 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  align-self: center;
+}
+.container form {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.container form input {
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+.container form input[type=submit] {
+  border: none;
+  background-color: rgb(3, 156, 3);
+  color: white;
+  padding: 0.5rem;
+}
+.container form input[type=submit]:hover {
+  cursor: pointer;
+  filter: brightness(0.94);
+}/*# sourceMappingURL=style.css.map */
