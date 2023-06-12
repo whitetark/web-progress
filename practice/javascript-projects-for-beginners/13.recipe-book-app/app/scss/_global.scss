@@ -1,0 +1,67 @@
+body {
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: darkslategrey;
+    border-radius: 5px;
+  }
+}
+
+header,
+main {
+  display: grid;
+  justify-content: center;
+}
+header {
+  background-color: darkslategrey;
+  color: white;
+  font-size: 4.8rem;
+  padding: 3rem 0;
+}
+.container {
+  margin: 0 auto;
+  max-width: 120rem;
+  padding: 20px;
+}
+#menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  .recipe {
+    @include flex-row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    gap: 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px 1px rgb(190, 189, 189);
+    h3 {
+      font-size: 2.2rem;
+      width: 20%;
+    }
+    p {
+      color: gray;
+      width: 60%;
+    }
+    h3,
+    span {
+      font-weight: 700;
+    }
+    a {
+      white-space: nowrap;
+      background-color: darkslategrey;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+    }
+    img {
+      height: 15rem;
+      width: 15rem;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      border-radius: 5px;
+    }
+  }
+}
