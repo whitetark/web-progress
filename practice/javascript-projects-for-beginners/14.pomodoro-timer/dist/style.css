@@ -1,0 +1,80 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  display: grid;
+  justify-items: center;
+}
+
+.container {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  margin: 8rem;
+}
+.container h1 {
+  font-size: 3.6rem;
+}
+.container #time {
+  font-size: 5.6rem;
+}
+.container .buttons {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.container .buttons > button {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  color: white;
+}
+.container .buttons > button#start {
+  background-color: darkgreen;
+}
+.container .buttons > button#stop {
+  background-color: darkred;
+}
+.container .buttons > button#reset {
+  background-color: darkgrey;
+}
+.container .buttons > button.active {
+  pointer-events: none;
+  opacity: 0.3;
+}/*# sourceMappingURL=style.css.map */

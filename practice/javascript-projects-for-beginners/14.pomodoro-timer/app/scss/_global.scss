@@ -1,0 +1,39 @@
+body {
+  display: grid;
+  justify-items: center;
+}
+
+.container {
+  @include flex-column;
+  align-items: center;
+  gap: 6rem;
+  margin: 8rem;
+  h1 {
+    font-size: 3.6rem;
+  }
+  #time {
+    font-size: 5.6rem;
+  }
+  .buttons {
+    @include flex-row;
+    gap: 2rem;
+    > button {
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      color: white;
+      &#start {
+        background-color: darkgreen;
+      }
+      &#stop {
+        background-color: darkred;
+      }
+      &#reset {
+        background-color: darkgrey;
+      }
+      &.active {
+        pointer-events: none;
+        opacity: 0.3;
+      }
+    }
+  }
+}
