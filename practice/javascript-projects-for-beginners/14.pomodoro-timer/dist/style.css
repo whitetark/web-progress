@@ -77,4 +77,7 @@ body {
 .container .buttons > button.active {
   pointer-events: none;
   opacity: 0.3;
+}
+.container .buttons > button:hover {
+  filter: brightness(0.96);
 }/*# sourceMappingURL=style.css.map */
