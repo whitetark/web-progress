@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="dist/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <section class="searchbox">
+          <i class="fa-solid fa-location-crosshairs"></i>
+          <input type="text" id="city" placeholder="Enter Your Location" />
+          <button id="search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </button>
+        </section>
+        <section class="weather-info hidden">
+          <div class="weather-info-img">
+            <img src="dist/images/clear.png" alt="" />
+          </div>
+          <div class="weather-info-temp">
+            <span id="temp">0°</span>
+            <span id="description">Snow</span>
+          </div>
+          <div class="weather-info-add">
+            <div class="weather-info-add-hum">
+              <i class="fa-solid fa-water"></i>
+              <span id="hum">88%</span>
+            </div>
+            <div class="weather-info-add-wind">
+              <i class="fa-solid fa-wind"></i>
+              <span id="wind">0Km/h</span>
+            </div>
+          </div>
+        </section>
+        <section class="not-found hidden">
+          <img src="dist/images/404.png" alt="" />
+          <p>Oops! Invalid location :/</p>
+        </section>
+      </div>
+    </main>
+    <script src="https://kit.fontawesome.com/8e45db89c6.js" crossorigin="anonymous"></script>
+    <script src="app/js/scripts.js"></script>
+  </body>
+</html>

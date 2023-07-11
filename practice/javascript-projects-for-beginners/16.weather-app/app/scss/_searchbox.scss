@@ -1,0 +1,27 @@
+.searchbox{
+    @include flex-row;
+    gap: 1rem;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 500;
+    input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0.5rem;
+        text-transform: uppercase;
+    }
+    input::placeholder{
+        text-transform: capitalize;
+        color: rgba(0, 15, 70, 0.61);
+    }
+    button{
+        font-size: 2rem;
+        padding: 0.75rem 1rem;
+        border-radius: 100%;
+        &:hover{
+            transition: 0.2s ease-in;
+            background-color: rgb(248, 238, 223);
+        }
+    }
+}

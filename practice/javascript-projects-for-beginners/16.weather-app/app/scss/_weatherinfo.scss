@@ -1,0 +1,29 @@
+.weather-info{
+    @include flex-column;
+    gap: 4rem;
+    font-weight: 500;
+    padding-top: 2rem;
+    &-img{
+        width: 25rem;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &-temp{
+        @include flex-column;
+        align-items: center;
+        #temp{
+            font-size: 7.2rem;
+        }
+        #description{
+            font-size: 2.8rem;
+            color: rgba(0, 15, 70, 0.815);
+        }
+    }
+    &-add{
+        @include flex-row;
+        justify-content: space-between;
+        font-size: 2.4rem;
+    }
+}
