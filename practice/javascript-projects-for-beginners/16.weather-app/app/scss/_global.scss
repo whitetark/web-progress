@@ -9,27 +9,38 @@ main {
     @include flex-column;
     align-items: center;
     justify-content: center;
-    height: auto;
+    max-height: 10rem;
     border-radius: 10px;
     padding: 2rem;
     background-color: rgb(255, 247, 240);
     color: rgb(0, 15, 70);
-    transition-property: height;
-    transition: 0.6s ease-out;
+    @include crossBrowser(transition, all 0.6s ease-out);
     .hidden {
       display: none;
+      scale: 0;
+      opacity: 0;
     }
+  }
+  .notfound {
+    max-height: 35rem;
+  }
+  .weatherinfo {
+    max-height: 58rem;
   }
 }
 
-.fadeIn{
-    animation: 0.5s fadeIn forwards;
-    animation-delay: 0.5s;
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0s;
 }
 
-@keyframes fadeIn{
-    to {
-        scale: 1;
-        opacity: 1;
-    }
+@keyframes fadeIn {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }

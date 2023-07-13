@@ -1,6 +1,8 @@
-let searchButton = document.getElementById('search')
+const searchButton = document.getElementById('search')
 const weatherInfo = document.querySelector('.weather-info')
 const notFound = document.querySelector('.not-found')
+const container = document.querySelector('.container')
+
 
 const API_KEY = '2056a022fed151492d9a2e2d577ca0ab'
 
@@ -11,12 +13,14 @@ searchButton.onclick = function () {
       .then((response) => response.json())
       .then((json) => {
         if (json.cod === '404') {
+          container.classList.remove('weatherinfo')
+          container.classList.add('notfound')
           weatherInfo.classList.add('hidden')
           notFound.classList.remove('hidden')
           notFound.classList.add('fadeIn')
           return
         }
-
+        
         notFound.classList.remove('fadeIn')
         notFound.classList.add('hidden')
 
@@ -56,6 +60,8 @@ searchButton.onclick = function () {
         hum.innerHTML = `${json.main.humidity}%`
         wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`
 
+        container.classList.remove('notfound')
+        container.classList.add('weatherinfo')
         weatherInfo.classList.add('fadeIn')
         weatherInfo.classList.remove('hidden')
       })
