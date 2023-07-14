@@ -1,0 +1,42 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: $dark-blue;
+  scroll-behavior: smooth;
+  box-shadow: 1px 1px 3px 1px rgba(37, 37, 37, 0.637);
+
+  .header {
+    @include flex-row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    input {
+      width: 40%;
+      min-width: 25.2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 7px;
+      border: none;
+      outline: none;
+
+      font-weight: 500;
+      font-size: 2.4rem;
+      text-transform: capitalize;
+      color: $dark-blue;
+    }
+    button {
+      font-size: 1.8rem;
+      border: 2px solid $white;
+      color: $white;
+      border-radius: 7px;
+      padding: 0.75rem;
+      transition: all 0.3s ease-out;
+      &:hover {
+        background-color: $white;
+        color: $dark-blue;
+      }
+    }
+  }
+}
