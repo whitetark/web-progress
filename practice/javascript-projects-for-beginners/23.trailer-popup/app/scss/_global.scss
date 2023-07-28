@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+body {
+  @include flex-column;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(39, 39, 39);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hidden{
+  display: none;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+  > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 2.4rem;
+  }
+  img {
+    max-width: 60rem;
+    width: 100%;
+  }
+  button {
+    place-self: flex-start;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.trailer {
+  position: absolute;
+  width: 100%;
+  top: 20rem;
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadein 0.8s;
+  z-index: 1;
+  button {
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    margin-bottom: 1rem;
+    transition: color 0.2s ease-out;
+    &:hover{
+      color: gray;
+    }
+  }
+  .video {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.overlay{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-color: black;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

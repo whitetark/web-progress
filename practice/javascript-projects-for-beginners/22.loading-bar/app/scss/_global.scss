@@ -1,0 +1,26 @@
+body {
+  @include flex-column;
+  justify-content: center;
+}
+
+.container {
+  @include flex-column;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2.4rem;
+  #progress-bar {
+    content: '';
+    width: 40rem;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    #progress {
+      content: '';
+      width: 0%;
+      height: 100%;
+      background-color: orange;
+      border-radius: 8px;
+      transition: width 0.2s ease-in;
+    }
+  }
+}

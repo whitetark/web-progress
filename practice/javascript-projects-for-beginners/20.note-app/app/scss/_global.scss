@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  @include flex-column;
+  gap: 2rem;
+  margin: 2rem;
+
+  h1 {
+    font-size: 3.6rem;
+  }
+  .notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 30rem);
+    gap: 2rem;
+  }
+  textarea,
+  button {
+    height: 20rem;
+    resize: none;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  button {
+    padding: 0;
+    text-align: center;
+    &:hover {
+      border: 2px solid black;
+    }
+  }
+}

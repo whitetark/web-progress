@@ -1,0 +1,12 @@
+.not-found{
+    @include flex-column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    font-weight: 500;
+    font-size: 2.4rem;
+    img{
+        width: 25rem;
+        height: auto;
+    }
+}

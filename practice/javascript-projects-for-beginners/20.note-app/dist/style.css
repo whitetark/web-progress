@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem;
+}
+.container h1 {
+  font-size: 3.6rem;
+}
+.container .notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30rem);
+  gap: 2rem;
+}
+.container textarea,
+.container button {
+  height: 20rem;
+  resize: none;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.container button {
+  padding: 0;
+  text-align: center;
+}
+.container button:hover {
+  border: 2px solid black;
+}/*# sourceMappingURL=style.css.map */

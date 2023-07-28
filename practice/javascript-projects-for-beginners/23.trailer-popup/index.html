@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trailer Popup</title>
+    <link rel="stylesheet" href="dist/style.css" />
+
+  </head>
+  <body>
+    <div class="container active">
+      <img src="dist/images/image.jpg" alt="">
+      <h1>Oppenheimer</h1>
+      <p>During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb.</p>
+      <button id="show">Watch Trailer</button>
+    </div>
+    <div class="trailer hidden">
+      <button id="close"><i class="fa-solid fa-x"></i></button>
+      <div class="video">
+              <iframe src="https://www.youtube.com/embed/uYPbbksJxIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="https://kit.fontawesome.com/8e45db89c6.js" crossorigin="anonymous"></script>
+    <script src="app/js/scripts.js"></script>
+  </body>
+</html>
