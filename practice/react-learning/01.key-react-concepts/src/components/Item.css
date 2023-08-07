@@ -1,0 +1,17 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.item h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.item p {
+  line-height: 1.4;
+  font-weight: 100;
+  font-size: 17px;
+}
