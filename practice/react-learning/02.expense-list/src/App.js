@@ -26,9 +26,7 @@ const startExpenses = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(startExpenses)
-  const addExpenseHandler = (expense) => {
-    setExpenses((prevState) => [expense, ...prevState])
-  }
+  const addExpenseHandler = (expense) => setExpenses((prevState) => [expense, ...prevState])
 
   return (
     <div>

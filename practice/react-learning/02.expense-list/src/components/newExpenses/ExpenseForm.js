@@ -10,15 +10,13 @@ const ExpenseForm = (props) => {
   //     enteredAmount: '',
   //     enteredDate: '',
   //   })
-
-  const titleChangeHandler = (event) => setEnteredTitle(event.target.value)
-  const valueChangeHandler = (event) => setEnteredValue(event.target.value)
-  const dateChangeHandler = (event) => setEnteredDate(event.target.date)
+  // const titleChangeHandler = (event) => setEnteredTitle(event.target.value)
+  // const valueChangeHandler = (event) => setEnteredValue(event.target.value)
+  // const dateChangeHandler = (event) => setEnteredDate(event.target.date)
   // setUserInput({
   //   ...userInput,
   //   enteredTitle: event.target.value,
   // })
-
   //If your state depends on the previous state
   // setUserInput((prevState) => {
   //   return { ...prevState, enteredTitle: event.target.value }
@@ -34,9 +32,7 @@ const ExpenseForm = (props) => {
     }
   }
 
-  const cancelHandler = () => {
-    props.onCancel()
-  }
+  const cancelHandler = () => props.onCancel()
 
   const submitHandler = (event) => {
     event.preventDefault()

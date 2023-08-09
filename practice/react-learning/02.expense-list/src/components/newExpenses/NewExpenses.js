@@ -13,13 +13,8 @@ const NewExpenses = (props) => {
     props.onAdd(expenseData)
   }
 
-  const onCancelHandler = () => {
-    setIsClicked(false)
-  }
-
-  const clickHandler = () => {
-    setIsClicked(true)
-  }
+  const onCancelHandler = () => setIsClicked(false)
+  const clickHandler = () => setIsClicked(true)
 
   return (
     <div className='new-expense'>
