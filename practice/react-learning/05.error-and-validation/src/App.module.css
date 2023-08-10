@@ -1,0 +1,10 @@
+.userSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem;
+  max-width: 90rem;
+  gap: 3rem;
+}
