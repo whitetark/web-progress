@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './App.module.css'
 import UserForm from './components/Main/UserForm'
 import UserRender from './components/Main/UserRender'
-import ErrorWrapper from './components/Main/ErrorWrapper'
+import ErrorWrapper from './components/UI/ErrorWrapper'
 
 const initialError = {
   isError: false,

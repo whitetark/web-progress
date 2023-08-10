@@ -1,11 +1,10 @@
 .error {
-  background-color: white;
   z-index: 1;
-  width: 100%;
+  width: 80%;
   max-width: 75rem;
   margin: 0 4rem;
-  border-radius: 8px;
   font-size: 1.8rem;
+  overflow: hidden;
 }
 
 .error > * {
@@ -16,7 +15,6 @@
   background-color: rgb(67, 20, 110);
   color: white;
   font-size: 2.8rem;
-  border-radius: 8px 8px 0 0;
 }
 
 .error-data {

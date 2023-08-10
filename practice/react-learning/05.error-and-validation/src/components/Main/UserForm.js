@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import styles from './UserForm.module.css'
 import Button from '../UI/Button'
+import Card from '../UI/Card'
 
-const UserForm = (props) => {
-  const [userInput, setUserInput] = useState({
-    username: '',
-    age: '',
-  })
+const initialUserInput = {
+  username: '',
+  age: '',
+}
+
+const UserForm = ({ onError, onAdd }) => {
+  const [userInput, setUserInput] = useState(initialUserInput)
 
   const inputHandle = (identifier, value) => {
     setUserInput((prevState) => {
@@ -20,7 +23,8 @@ const UserForm = (props) => {
   const submitHandle = (event) => {
     event.preventDefault()
     const result = formValidation(userInput)
-    result.isError ? props.onError(result) : props.onAdd(userInput)
+    result.isError ? onError(result) : onAdd(userInput)
+    setUserInput(initialUserInput)
   }
 
   const formValidation = (user) => {
@@ -50,32 +54,34 @@ const UserForm = (props) => {
   }
 
   return (
-    <form className={styles.form} onSubmit={submitHandle}>
-      <div className={styles.formContainer}>
-        <label htmlFor='username'>Username</label>
-        <input
-          type='text'
-          name='username'
-          autoComplete='off'
-          onChange={(event) => inputHandle('username', event.target.value)}
-          value={userInput.username}
-        />
-      </div>
-      <div className={styles.formContainer}>
-        <label htmlFor='age'>Age (Years)</label>
-        <input
-          type='number'
-          name='age'
-          step='1'
-          autoComplete='off'
-          onChange={(event) => inputHandle('age', event.target.value)}
-          value={userInput.age}
-        />
-      </div>
-      <div className={styles.formContainer}>
-        <Button type='submit'>Add User</Button>
-      </div>
-    </form>
+    <Card className={styles['form-card']}>
+      <form className={styles.form} onSubmit={submitHandle}>
+        <div className={styles.formContainer}>
+          <label htmlFor='username'>Username</label>
+          <input
+            type='text'
+            name='username'
+            autoComplete='off'
+            onChange={(event) => inputHandle('username', event.target.value)}
+            value={userInput.username}
+          />
+        </div>
+        <div className={styles.formContainer}>
+          <label htmlFor='age'>Age (Years)</label>
+          <input
+            type='number'
+            name='age'
+            step='1'
+            autoComplete='off'
+            onChange={(event) => inputHandle('age', event.target.value)}
+            value={userInput.age}
+          />
+        </div>
+        <div className={styles.formContainer}>
+          <Button type='submit'>Add User</Button>
+        </div>
+      </form>
+    </Card>
   )
 }
 

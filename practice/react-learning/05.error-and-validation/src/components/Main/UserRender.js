@@ -1,17 +1,18 @@
 import React from 'react'
 import styles from './UserRender.module.css'
+import Card from '../UI/Card'
 
-const UserRender = (props) => {
+const UserRender = ({ arr }) => {
   return (
-    <div className={styles.render}>
-      {props.arr.map((user, index) => {
+    <Card className={styles.render}>
+      {arr.map((user, index) => {
         return (
           <div key={index}>
             {user.username} ({user.age} years old)
           </div>
         )
       })}
-    </div>
+    </Card>
   )
 }
 

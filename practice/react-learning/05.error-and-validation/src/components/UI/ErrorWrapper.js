@@ -1,5 +1,5 @@
 import React from 'react'
-import Overlay from '../UI/Overlay'
+import Overlay from './Overlay'
 import Error from './Error'
 import styles from './ErrorWrapper.module.css'
 
