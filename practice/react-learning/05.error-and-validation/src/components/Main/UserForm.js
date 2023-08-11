@@ -1,30 +1,22 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import styles from './UserForm.module.css'
 import Button from '../UI/Button'
 import Card from '../UI/Card'
 
-const initialUserInput = {
-  username: '',
-  age: '',
-}
-
 const UserForm = ({ onError, onAdd }) => {
-  const [userInput, setUserInput] = useState(initialUserInput)
-
-  const inputHandle = (identifier, value) => {
-    setUserInput((prevState) => {
-      return {
-        ...prevState,
-        [identifier]: value,
-      }
-    })
-  }
+  const nameInputRef = useRef()
+  const ageInputRef = useRef()
 
   const submitHandle = (event) => {
     event.preventDefault()
+    const userInput = {
+      username: nameInputRef.current.value,
+      age: ageInputRef.current.value,
+    }
     const result = formValidation(userInput)
     result.isError ? onError(result) : onAdd(userInput)
-    setUserInput(initialUserInput)
+    nameInputRef.current.value = ''
+    ageInputRef.current.value = ''
   }
 
   const formValidation = (user) => {
@@ -34,22 +26,16 @@ const UserForm = ({ onError, onAdd }) => {
         isError: true,
         reason: 'Age must be greater than zero',
       }
-    } else if (user.age === '') {
+    } else if (user.age === '' || user.username === '') {
       result = {
         isError: true,
-        reason: 'Age cannot be empty',
-      }
-    } else if (user.username === '') {
-      result = {
-        isError: true,
-        reason: 'Username cannot be empty',
+        reason: 'Fields cannot be empty',
       }
     } else {
       result = {
         isError: false,
       }
     }
-
     return result
   }
 
@@ -58,24 +44,11 @@ const UserForm = ({ onError, onAdd }) => {
       <form className={styles.form} onSubmit={submitHandle}>
         <div className={styles.formContainer}>
           <label htmlFor='username'>Username</label>
-          <input
-            type='text'
-            name='username'
-            autoComplete='off'
-            onChange={(event) => inputHandle('username', event.target.value)}
-            value={userInput.username}
-          />
+          <input type='text' name='username' autoComplete='off' ref={nameInputRef} />
         </div>
         <div className={styles.formContainer}>
           <label htmlFor='age'>Age (Years)</label>
-          <input
-            type='number'
-            name='age'
-            step='1'
-            autoComplete='off'
-            onChange={(event) => inputHandle('age', event.target.value)}
-            value={userInput.age}
-          />
+          <input type='number' name='age' step='1' autoComplete='off' ref={ageInputRef} />
         </div>
         <div className={styles.formContainer}>
           <Button type='submit'>Add User</Button>

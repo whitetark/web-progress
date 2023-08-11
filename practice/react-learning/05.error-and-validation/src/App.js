@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './App.module.css'
 import UserForm from './components/Main/UserForm'
 import UserRender from './components/Main/UserRender'
@@ -24,13 +24,13 @@ function App() {
   const errorCloseHandle = () => setError(initialError)
 
   return (
-    <div>
+    <React.Fragment>
       {error.isError && <ErrorWrapper reason={error.reason} onClose={errorCloseHandle} />}
       <div className={styles.userSection}>
         <UserForm onAdd={addUser} onError={errorHandle} />
         {userList && <UserRender arr={userList} />}
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 

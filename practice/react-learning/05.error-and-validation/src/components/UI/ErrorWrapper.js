@@ -2,14 +2,19 @@ import React from 'react'
 import Overlay from './Overlay'
 import Error from './Error'
 import styles from './ErrorWrapper.module.css'
+import ReactDOM from 'react-dom'
 
 const ErrorWrapper = (props) => {
-  const closeError = () => props.onClose()
   return (
-    <div className={styles['error-wrapper']}>
-      <Overlay onClick={closeError} />
-      <Error reason={props.reason} onClose={closeError} />
-    </div>
+    <React.Fragment>
+      {ReactDOM.createPortal(
+        <div className={styles['error-wrapper']}>
+          <Overlay onClick={props.onClose} />
+          <Error reason={props.reason} onClose={props.onClose} />
+        </div>,
+        document.getElementById('error-root')
+      )}
+    </React.Fragment>
   )
 }
 
