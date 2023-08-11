@@ -10,16 +10,10 @@ const initialError = {
 }
 
 function App() {
-  const [userList, setUserList] = useState(null)
+  const [userList, setUserList] = useState([])
   const [error, setError] = useState(initialError)
 
-  const addUser = (data) => {
-    if (userList) {
-      setUserList((prevState) => [data, ...prevState])
-    } else {
-      setUserList([data])
-    }
-  }
+  const addUser = (data) => setUserList((prevState) => [data, ...prevState])
   const errorHandle = (log) => setError(log)
   const errorCloseHandle = () => setError(initialError)
 
@@ -28,7 +22,7 @@ function App() {
       {error.isError && <ErrorWrapper reason={error.reason} onClose={errorCloseHandle} />}
       <div className={styles.userSection}>
         <UserForm onAdd={addUser} onError={errorHandle} />
-        {userList && <UserRender arr={userList} />}
+        {userList.length() > 0 && <UserRender arr={userList} />}
       </div>
     </React.Fragment>
   )
