@@ -1,0 +1,14 @@
+@import '../../scss/variables.scss';
+
+.header {
+  background-color: $red;
+  color: $white;
+  position: sticky;
+  top: 0;
+  padding: 1.5rem 2rem;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+}
