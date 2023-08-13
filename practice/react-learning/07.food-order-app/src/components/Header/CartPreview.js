@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './CartPreview.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import Button from '../UI/Button'
 
 const CartPreview = () => {
-  const[counter, ]useState(0)
   return (
-    <div>
-      <FontAwesomeIcon icon={faCartShopping} style={{ color: '#ffffff' }} />
+    <Button className={styles.preview}>
+      <FontAwesomeIcon icon={faCartShopping} style={{ color: '#ffffff', textAlign: 'center' }} />
       <span>Your Cart</span>
-      <span id='counter'>{}</span>
-    </div>
+      <span id={styles.counter}>{0}</span>
+    </Button>
   )
 }
 

@@ -1,0 +1,8 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.main {
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+}

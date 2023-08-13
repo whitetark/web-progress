@@ -1,0 +1,19 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.hero {
+  @include flex-column;
+  gap: 2rem;
+  background-color: $gray;
+  color: $white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  max-width: 73rem;
+  width: 90%;
+  margin-top: 20rem;
+  h1 {
+    font-size: $header;
+    font-weight: $bold;
+  }
+}
