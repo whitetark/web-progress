@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './Main.module.scss'
-import Hero from './Hero/Hero'
-import ProductList from './Products/ProductList'
+import Hero from '../Hero/Hero'
+import ProductList from '../Products/ProductList'
+import Container from '../UI/Container'
 
 const Main = () => {
   const heroData = {
@@ -36,10 +37,10 @@ const Main = () => {
   ]
 
   return (
-    <div className={styles.main}>
+    <Container className={styles.main}>
       <Hero data={heroData} />
       <ProductList data={productsData} />
-    </div>
+    </Container>
   )
 }
 

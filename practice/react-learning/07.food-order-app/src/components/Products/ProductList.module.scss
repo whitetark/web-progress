@@ -1,0 +1,13 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.list {
+  @include flex-column;
+  gap: 2rem;
+  width: 85%;
+  padding: 3rem;
+
+  .divider {
+    border-top: 2px solid #dfdcdc;
+  }
+}
