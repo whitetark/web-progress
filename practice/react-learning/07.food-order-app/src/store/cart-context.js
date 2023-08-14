@@ -1,51 +1,82 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useReducer } from 'react'
 
 const CartContext = React.createContext({
-  cart: [
-    {
-      name: '',
-      amount: 0,
-    },
-  ],
-  onAdd: () => {},
-  onRemove: () => {},
-  getAmount: () => {},
+  items: [],
+  onAdd: (item) => {},
+  onRemove: (id) => {},
+  totalPrice: 0,
 })
 
-export const CartContextProvider = (props) => {
-  const [cart, setCart] = useState([])
-  useEffect(() => {
-    const localCart = localStorage.getItem('cart')
-    if (localCart.length > 0) {
-      setCart(localCart)
-    }
-  }, [])
-
-  const addHandler = (product) => {
-    if (cart.some((item) => item.name === product.name)) {
-    } else {
-      setCart((prevState) => [product, ...prevState])
-    }
-  }
-  const removeHandler = (product) => {}
-  const getAmount = () => {
-    let result = 0
-    cart.forEach((product) => {
-      result += product.amount
-    })
-    return result
-  }
-
-  return (
-    <CartContext.Provider
-      value={{
-        cart: cart,
-        onAdd: addHandler,
-        onRemove: removeHandler,
-        getAmount: getAmount,
-      }}
-    >
-      {props.children}
-    </CartContext.Provider>
-  )
+const defaultCartState = {
+  items: [],
+  totalPrice: 0,
 }
+
+const cartReducer = (state, action) => {
+  if (action.type === 'ADD') {
+    const newTotalPrice = state.totalPrice + action.item.price * action.item.amount
+    let newItems
+
+    const checkIndex = state.items.findIndex((item) => item.id === action.item.id)
+
+    if (checkIndex === -1) {
+      newItems = state.items.concat(action.item)
+    } else {
+      const cartItem = state.items[checkIndex]
+      const newItem = {
+        ...cartItem,
+        amount: cartItem.amount + action.item.amount,
+      }
+      newItems = [...state.items]
+      newItems[checkIndex] = newItem
+    }
+    return {
+      items: newItems,
+      totalPrice: newTotalPrice,
+    }
+  }
+
+  if (action.type === 'REMOVE') {
+    const itemIndex = state.items.findIndex((item) => item.id === action.id)
+    const item = state.items[itemIndex]
+    let newItems = [...state.items]
+    if (item.amount > 1) {
+      let newItem = {
+        ...newItems[itemIndex],
+        amount: item.amount - 1,
+      }
+      newItems[itemIndex] = newItem
+    } else {
+      newItems.splice(itemIndex, 1)
+    }
+    const newTotalPrice = state.totalPrice - item.price
+    return {
+      items: newItems,
+      totalPrice: newTotalPrice,
+    }
+  }
+
+  return defaultCartState
+}
+
+export const CartContextProvider = (props) => {
+  const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState)
+
+  const onAddHandler = (item) => {
+    dispatchCartAction({ type: 'ADD', item: item })
+  }
+
+  const onRemoveHandler = (id) => {
+    dispatchCartAction({ type: 'REMOVE', id: id })
+  }
+
+  const cartContext = {
+    cart: cartState.items,
+    onAdd: onAddHandler,
+    onRemove: onRemoveHandler,
+    totalPrice: cartState.totalPrice,
+  }
+  return <CartContext.Provider value={cartContext}>{props.children}</CartContext.Provider>
+}
+
+export default CartContext
