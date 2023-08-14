@@ -30,6 +30,10 @@ const cartReducer = (state, action) => {
       newItems = [...state.items]
       newItems[checkIndex] = newItem
     }
+    console.log({
+      items: newItems,
+      totalPrice: newTotalPrice,
+    })
     return {
       items: newItems,
       totalPrice: newTotalPrice,
@@ -71,7 +75,7 @@ export const CartContextProvider = (props) => {
   }
 
   const cartContext = {
-    cart: cartState.items,
+    items: cartState.items,
     onAdd: onAddHandler,
     onRemove: onRemoveHandler,
     totalPrice: cartState.totalPrice,
