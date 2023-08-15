@@ -7,7 +7,7 @@ const CartItem = ({ order }) => {
   const ctx = useContext(CartContext)
 
   const minusHandler = () => {
-    ctx.onRemove(order.name)
+    ctx.onRemove(order.id)
   }
 
   const plusHandler = () => {
@@ -23,8 +23,8 @@ const CartItem = ({ order }) => {
       <div className={styles['item-info']}>
         <h2>{order.id}</h2>
         <div className={styles['item-info-more']}>
-          <span id={styles.price}>{order.price}</span>
-          <span id={styles.amount}>{order.amount}</span>
+          <span id={styles.price}>${order.price}</span>
+          <span id={styles.amount}>x {order.amount}</span>
         </div>
       </div>
       <div className={styles['item-actions']}>

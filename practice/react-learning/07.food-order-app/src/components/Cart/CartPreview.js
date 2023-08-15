@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styles from './CartPreview.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
@@ -8,11 +8,30 @@ import CartRender from './CartRender'
 
 const CartPreview = () => {
   const [isCartShown, setIsCartShown] = useState(false)
+  const [btnIsTriggered, setBtnIsHighlighted] = useState(false)
   const ctx = useContext(CartContext)
   let totalAmount = 0
+  let items = ctx.items
 
-  if (ctx.items.length > 0) {
-    ctx.items.forEach((item) => {
+  const btnClasses = `${styles.preview} ${btnIsTriggered ? styles.bump : ''}`
+
+  useEffect(() => {
+    if (items.length === 0) {
+      return
+    }
+    setBtnIsHighlighted(true)
+
+    const timer = setTimeout(() => {
+      setBtnIsHighlighted(false)
+    }, 300)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [items])
+
+  if (items.length > 0) {
+    items.forEach((item) => {
       totalAmount += item.amount
     })
   }
@@ -20,15 +39,17 @@ const CartPreview = () => {
   const clickHandler = (event) => {
     event.preventDefault()
     setIsCartShown(true)
+    document.body.classList.add('modal-active')
   }
 
   const closeHandler = () => {
     setIsCartShown(false)
+    document.body.classList.remove('modal-active')
   }
   return (
     <React.Fragment>
       {isCartShown && <CartRender onClose={closeHandler} />}
-      <Button className={styles.preview} onClick={clickHandler}>
+      <Button className={btnClasses} onClick={clickHandler} disabled={items.length === 0}>
         <FontAwesomeIcon icon={faCartShopping} style={{ color: '#ffffff', textAlign: 'center' }} />
         <span>Your Cart</span>
         <span id={styles.counter}>{totalAmount}</span>

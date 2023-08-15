@@ -6,8 +6,21 @@
   gap: 2rem;
   width: 85%;
   padding: 3rem;
+  animation: meals-appear 1s ease-out forwards;
 
   .divider {
     border-top: 2px solid #dfdcdc;
+  }
+}
+
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

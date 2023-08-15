@@ -27,7 +27,7 @@ $gap: 0.5rem;
 
   &-actions {
     @include flex-column;
-    gap: $gap;
+    gap: $gap + 0.5rem;
     align-items: flex-end;
     &-input {
       @include flex-row;

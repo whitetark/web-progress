@@ -20,6 +20,7 @@ const CartRender = (props) => {
     height: 100vh;
     width: 100%;
     opacity: 0.75;
+    z-index: 101;
   `
   const onCloseHandler = () => {
     props.onClose()
@@ -30,13 +31,13 @@ const CartRender = (props) => {
   return (
     <React.Fragment>
       {ReactDOM.createPortal(
-        <div className='render-wrapper'>
+        <div className={styles['render-wrapper']}>
           <Overlay onClick={onCloseHandler} />
           <Card className={styles.cart}>
             <div className={styles['cart-list']}>
               {items.map((order) => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={order.id}>
                     <CartItem order={order} />
                     <div className={styles.divider}></div>
                   </React.Fragment>
@@ -45,11 +46,15 @@ const CartRender = (props) => {
             </div>
             <div className={styles['cart-info']}>
               <p>Total Amount:</p>
-              <span>{ctx.totalPrice}</span>
+              <span>${ctx.totalPrice.toFixed(2)}</span>
             </div>
             <div className={styles['cart-actions']}>
-              <Button onClick={onCloseHandler}>Close</Button>
-              <Button onClick={onOrderHandler}>Order</Button>
+              <Button className={styles.close} onClick={onCloseHandler}>
+                Close
+              </Button>
+              <Button className={styles.order} onClick={onOrderHandler}>
+                Order
+              </Button>
             </div>
           </Card>
         </div>,

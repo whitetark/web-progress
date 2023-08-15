@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useReducer } from 'react'
 
 const CartContext = React.createContext({
   items: [],
@@ -30,10 +30,6 @@ const cartReducer = (state, action) => {
       newItems = [...state.items]
       newItems[checkIndex] = newItem
     }
-    console.log({
-      items: newItems,
-      totalPrice: newTotalPrice,
-    })
     return {
       items: newItems,
       totalPrice: newTotalPrice,
