@@ -1,0 +1,15 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.render-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow-y: hidden;
+  height: 100vh;
+  width: 100%;
+  > * {
+    z-index: 102;
+  }
+}

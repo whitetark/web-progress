@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import Button from '../UI/Button'
 import CartContext from '../../store/cart-context'
-import CartRender from './CartRender'
+import OverlayRender from '../Layout/OverlayRender'
 
 const CartPreview = () => {
   const [isCartShown, setIsCartShown] = useState(false)
@@ -48,7 +48,7 @@ const CartPreview = () => {
   }
   return (
     <React.Fragment>
-      {isCartShown && <CartRender onClose={closeHandler} />}
+      {isCartShown && <OverlayRender onClose={closeHandler} />}
       <Button className={btnClasses} onClick={clickHandler} disabled={items.length === 0}>
         <FontAwesomeIcon icon={faCartShopping} style={{ color: '#ffffff', textAlign: 'center' }} />
         <span>Your Cart</span>

@@ -20,6 +20,16 @@
   }
 }
 
+.preview:disabled,
+.preview:active:disabled {
+  background-color: $border;
+  color: #575757;
+  cursor: not-allowed;
+  #counter {
+    background-color: #e4e3e3;
+  }
+}
+
 .bump {
   animation: bump 300ms ease-out;
 }

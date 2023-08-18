@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import styles from './Product.module.scss'
 import Button from '../UI/Button'
 import CartContext from '../../store/cart-context'
@@ -22,7 +22,7 @@ const Product = ({ data }) => {
       <div className={styles['product-description']}>
         <h4>{data.name}</h4>
         <p>{data.description}</p>
-        <span>${data.price}</span>
+        <span>${data.price.toFixed(2)}</span>
       </div>
       <div className={styles['product-actions']}>
         <div className={styles['product-actions-input']}>
