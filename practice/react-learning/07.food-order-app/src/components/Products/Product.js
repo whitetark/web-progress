@@ -1,17 +1,22 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './Product.module.scss'
 import Button from '../UI/Button'
 import CartContext from '../../store/cart-context'
 
 const Product = ({ data }) => {
-  const amountRef = useRef()
+  const [amount, setAmount] = useState(1)
   const ctx = useContext(CartContext)
+
+  const onChangeHandler = (event) => setAmount(event.target.value)
 
   const addItemToCart = (event) => {
     event.preventDefault()
+    if (amount <= 0) {
+      return
+    }
     const newItem = {
       id: data.name,
-      amount: +amountRef.current.value,
+      amount: +amount,
       price: data.price,
     }
 
@@ -28,16 +33,17 @@ const Product = ({ data }) => {
         <div className={styles['product-actions-input']}>
           <label htmlFor='amount'>Amount</label>
           <input
-            ref={amountRef}
+            value={amount}
             type='number'
             name='amount'
             min='1'
             max='5'
             step='1'
             defaultValue='1'
+            onChange={onChangeHandler}
           />
         </div>
-        <Button onClick={addItemToCart} className={styles.red}>
+        <Button onClick={addItemToCart} className={styles.red} disabled={amount <= 0}>
           + Add
         </Button>
       </div>

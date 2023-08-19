@@ -15,6 +15,13 @@
     border-radius: 20px;
   }
 
+  @include breakpoint-down(small) {
+    padding: 1rem 2rem;
+    #text {
+      display: none;
+    }
+  }
+
   &:hover {
     background-color: rgb(39, 0, 0);
   }

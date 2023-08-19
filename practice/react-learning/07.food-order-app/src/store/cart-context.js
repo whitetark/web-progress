@@ -4,6 +4,7 @@ const CartContext = React.createContext({
   items: [],
   onAdd: (item) => {},
   onRemove: (id) => {},
+  cartReset: () => {},
   totalPrice: 0,
 })
 
@@ -56,6 +57,10 @@ const cartReducer = (state, action) => {
     }
   }
 
+  if (action.type === 'RESET') {
+    return defaultCartState
+  }
+
   return defaultCartState
 }
 
@@ -70,10 +75,15 @@ export const CartContextProvider = (props) => {
     dispatchCartAction({ type: 'REMOVE', id: id })
   }
 
+  const onResetHandler = () => {
+    dispatchCartAction({ type: 'RESET' })
+  }
+
   const cartContext = {
     items: cartState.items,
     onAdd: onAddHandler,
     onRemove: onRemoveHandler,
+    onReset: onResetHandler,
     totalPrice: cartState.totalPrice,
   }
   return <CartContext.Provider value={cartContext}>{props.children}</CartContext.Provider>

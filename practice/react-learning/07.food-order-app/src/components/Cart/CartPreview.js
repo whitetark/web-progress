@@ -51,7 +51,7 @@ const CartPreview = () => {
       {isCartShown && <OverlayRender onClose={closeHandler} />}
       <Button className={btnClasses} onClick={clickHandler} disabled={items.length === 0}>
         <FontAwesomeIcon icon={faCartShopping} style={{ color: '#ffffff', textAlign: 'center' }} />
-        <span>Your Cart</span>
+        <span id={styles.text}>Your Cart</span>
         <span id={styles.counter}>{totalAmount}</span>
       </Button>
     </React.Fragment>
