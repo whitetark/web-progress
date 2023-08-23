@@ -5,7 +5,6 @@ import cart, { cartActions } from '../../store/cart'
 const CartItem = (props) => {
   const { id, title, price, description, amount } = props.item
   const dispatch = useDispatch()
-  console.log(props.item)
   const totalPrice = amount * price
   const minusHandler = () => {
     dispatch(cartActions.removeItemFromCart(id))

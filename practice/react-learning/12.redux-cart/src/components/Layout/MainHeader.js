@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const MainHeader = (props) => {
   const dispatch = useDispatch()
-  const cartItems = useSelector((state) => state.items)
+  const cartItems = useSelector((state) => state.cart.items)
   let amount = 0
 
   const cartShownHandler = () => {
