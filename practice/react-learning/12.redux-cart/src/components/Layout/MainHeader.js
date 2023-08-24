@@ -1,4 +1,4 @@
-import { cartActions } from '../../store/cart'
+import { uiActions } from '../../store/ui'
 import CartButton from '../Cart/CartButton'
 import classes from './MainHeader.module.css'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,7 +9,7 @@ const MainHeader = (props) => {
   let amount = 0
 
   const cartShownHandler = () => {
-    dispatch(cartActions.toggleIsShown())
+    dispatch(uiActions.toggleIsShown())
   }
 
   if (cartItems.length > 0) {
