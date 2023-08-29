@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import { Form, Link, useActionData, useSearchParams } from 'react-router-dom'
+import { Form, Link, useActionData, useNavigation, useSearchParams } from 'react-router-dom'
 
 import classes from './AuthForm.module.css'
 
 function AuthForm() {
   const data = useActionData()
+  const navigation = useNavigation()
 
   const [searchParams] = useSearchParams()
   const isLogin = searchParams.get('mode') === 'login'
+  const isSubmitting = navigation.state === 'submitting'
 
   return (
     <>
@@ -15,7 +17,7 @@ function AuthForm() {
         <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
         {data && data.errors && (
           <ul>
-            {Object.values(data.values).map((err) => (
+            {Object.values(data.errors).map((err) => (
               <li key={err}>{err}</li>
             ))}
           </ul>
@@ -33,7 +35,7 @@ function AuthForm() {
           <Link to={`?mode=${isLogin ? 'singup' : 'login'}`}>
             {isLogin ? 'Create new user' : 'Login'}
           </Link>
-          <button type='submit'>Save</button>
+          <button disabled={isSubmitting}>{isSubmitting ? "Submitting..." : "Save"}</button>
         </div>
       </Form>
     </>
