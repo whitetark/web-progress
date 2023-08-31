@@ -35,7 +35,7 @@ function AuthForm() {
           <Link to={`?mode=${isLogin ? 'singup' : 'login'}`}>
             {isLogin ? 'Create new user' : 'Login'}
           </Link>
-          <button disabled={isSubmitting}>{isSubmitting ? "Submitting..." : "Save"}</button>
+          <button disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Save'}</button>
         </div>
       </Form>
     </>

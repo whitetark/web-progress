@@ -16,7 +16,7 @@ function EventForm({ method, event }) {
     <Form method={method} className={classes.form}>
       {data && data.errors && (
         <ul>
-          {Object.values(data.errors).mapp((err) => {
+          {Object.values(data.errors).map((err) => {
             return <li key={err}>{err}</li>
           })}
         </ul>

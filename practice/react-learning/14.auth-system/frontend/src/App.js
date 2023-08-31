@@ -14,8 +14,8 @@ import RootLayout from './pages/Root'
 import { action as manipulateEventAction } from './components/EventForm'
 import NewsletterPage, { action as newsletterAction } from './pages/Newsletter'
 import AuthenticationPage, { action as authAction } from './pages/Authentication'
-import {action as logoutAction} from './pages/Logout'
-import {checkAuthLoader, tokenLoader} from './util/auth'
+import { action as logoutAction } from './pages/Logout'
+import { checkAuthLoader, tokenLoader } from './util/auth'
 
 const router = createBrowserRouter([
   {
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
                 path: 'edit',
                 element: <EditEventPage />,
                 action: manipulateEventAction,
-                loader: checkAuthLoader
+                loader: checkAuthLoader,
               },
             ],
           },
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
             path: 'new',
             element: <NewEventPage />,
             action: manipulateEventAction,
-            loader: checkAuthLoader
+            loader: checkAuthLoader,
           },
         ],
       },
@@ -74,8 +74,8 @@ const router = createBrowserRouter([
       {
         path: 'logout',
         action: logoutAction,
-        loader: checkAuthLoader
-      }
+        loader: checkAuthLoader,
+      },
     ],
   },
 ])
