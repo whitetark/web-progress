@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Headphones - Whitetark</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png" />
+    <link rel="stylesheet" href="scss/style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="background-page"></div>
+    </div>
+    <header>
+      <section class="header-bar">
+        <a href="#" class="logo">
+          <img src="images/logo.png" alt="Monstercat Logo" />
+        </a>
+        <ul>
+          <li>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxl-tiktok"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxl-twitch"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxl-discord"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-music"></i></a>
+          </li>
+        </ul>
+        <button id="menu-button" onclick="toggleMenu()">
+          <i class="bx bx-menu"></i>
+        </button>
+      </section>
+      <div class="navigation" id="navigation" onclick="toggleMenu()">
+        <div class="navigation-bar" id="navigation-bar" onclick="event.stopPropagation()">
+          <div class="navigation-bar-header">
+            <img src="images/big-logo.png" alt="Monstercat" />
+            <button onclick="toggleMenu()">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="navigation-bar-content">
+            <ul>
+              <li>
+                <button onclick="dropdownActive(this)">
+                  <span>Music</span>
+                  <i class="bx bxs-chevron-right"></i>
+                </button>
+                <div class="dropdown">
+                  <ul>
+                    <li><a href="#">Our Music</a></li>
+                    <li><a href="#">Instinct</a></li>
+                    <li><a href="#">Uncaged</a></li>
+                    <li><a href="#">Silk</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#">Artists</a></li>
+              <li>
+                <button onclick="dropdownActive(this)">
+                  <span>About</span>
+                  <i class="bx bxs-chevron-right"></i>
+                </button>
+                <div class="dropdown">
+                  <ul>
+                    <li><a href="#">About Monstercat</a></li>
+                    <li><a href="#">Diversity n' Inclusion</a></li>
+                    <li><a href="#">Code Of Ethics</a></li>
+                    <li><a href="#">Environmental</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#">News</a></li>
+              <li>
+                <button onclick="dropdownActive(this)">
+                  <span>Events</span>
+                  <i class="bx bxs-chevron-right"></i>
+                </button>
+                <div class="dropdown">
+                  <ul>
+                    <li><a href="#">Monstercat Events Experience</a></li>
+                    <li><a href="#">Upcoming Events</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button onclick="dropdownActive(this)">
+                  <span>Programming</span>
+                  <i class="bx bxs-chevron-right"></i>
+                </button>
+                <div class="dropdown">
+                  <ul>
+                    <li><a href="#">MonstercatTV</a></li>
+                    <li><a href="#">Call Of The Wild</a></li>
+                    <li><a href="#">Silk Showcase</a></li>
+                    <li><a href="#">Upcoming Shows</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#">Gold</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Player</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Lost Civilization</a></li>
+            </ul>
+          </div>
+          <div class="navigation-bar-footer">
+            <ul>
+              <li>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-tiktok"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-twitch"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-discord"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bx-music"></i></a>
+              </li>
+            </ul>
+            <div class="navigation-bar-footer-loginregister">
+              <button class="border">Sign In</button>
+              <span>Or</span>
+              <button>Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="main-content">
+        <div class="hero">
+          <div class="hero-image">
+            <p><span class="green">Instinct</span> — Released February 19, 2023</p>
+            <img src="images/album-cover.png" alt="Album Cover" />
+          </div>
+          <div class="hero-content">
+            <div class="name-title">
+              <span class="upcase text-stroke">Headphones</span>
+              <span class="upcase">Whitetark</span>
+            </div>
+            <div class="hero-content-buttons">
+              <button class="green upcase">
+                <i class="bx bx-play"></i>
+                Listen Now
+              </button>
+              <button class="upcase">
+                <i class="bx bx-share-alt"></i>
+                Share
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="stream">
+          <h1>Stream It Your Way</h1>
+          <table>
+            <tr>
+              <td>
+                <a href="#"><i class="bx bx-music"></i></a>
+              </td>
+              <td>
+                <a href="#"><i class="bx bxs-compass"></i></a>
+              </td>
+              <td>
+                <a href="#"><i class="bx bxl-soundcloud"></i></a>
+              </td>
+              <td>
+                <a href="#"><i class="bx bxl-apple"></i></a>
+              </td>
+              <td>
+                <a href="#"><i class="bx bxl-youtube"></i></a>
+              </td>
+              <td>
+                <a href="#"><i class="bx bxl-spotify"></i></a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tracklist">
+          <h1>Track List</h1>
+          <div class="tracklist-grid">
+            <div class="tracklist-grid-item">
+              <span class="number">1</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>MAN ON THE MOON</p>
+                  <p class="artist">BROCKHAMPTON</p>
+                </div>
+              </div>
+              <span class="time">4:01</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">2</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>BLACK BALLOONS | 13LACK 13ALLONZ</p>
+                  <p class="artist">Denzel Curry</p>
+                </div>
+              </div>
+              <span class="time">3:31</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">3</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>paint THE sky</p>
+                  <p class="artist">Lil Yachty</p>
+                </div>
+              </div>
+              <span class="time">3:05</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">4</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>Come Back To Earth</p>
+                  <p class="artist">Mac Miller</p>
+                </div>
+              </div>
+              <span class="time">2:42</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">5</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>family ties</p>
+                  <p class="artist">Baby Keem, Kendrick Lamar</p>
+                </div>
+              </div>
+              <span class="time">4:12</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">6</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>Lady Of Namek</p>
+                  <p class="artist">Tory Lanez</p>
+                </div>
+              </div>
+              <span class="time">3:14</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">7</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>BLEACH</p>
+                  <p class="artist">BROCKHAMPTON</p>
+                </div>
+              </div>
+              <span class="time">4:33</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">8</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>GOLD</p>
+                  <p class="artist">BROCKHAMPTON</p>
+                </div>
+              </div>
+              <span class="time">4:26</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">9</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>Love Lost</p>
+                  <p class="artist">Mac Miller</p>
+                </div>
+              </div>
+              <span class="time">2:43</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">10</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>It Ain't Hard to Tell</p>
+                  <p class="artist">Nas</p>
+                </div>
+              </div>
+              <span class="time">3:22</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">11</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>RZA</p>
+                  <p class="artist">BROCKHAMPTON</p>
+                </div>
+              </div>
+              <span class="time">2:13</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+            <div class="tracklist-grid-item">
+              <span class="number">12</span>
+              <div>
+                <button><i class="bx bx-play"></i></button>
+                <div class="track-info">
+                  <p>Good News</p>
+                  <p class="artist">Mac Miller</p>
+                </div>
+              </div>
+              <span class="time">5:42</span>
+              <a href="#" class="share">
+                <i class="bx bx-share-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="video">
+          <h1>Music Video</h1>
+          <div class="video-content">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Y19q-7VN2WI"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer-content">
+        <div class="divider"></div>
+        <div class="links">
+          <ul>
+            <li><a href="#">About Monstercat</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Terms Of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+          <div class="links-email">
+            <span class="upcase">Monstercat News</span>
+            <p>Don't miss a thing, stay up to date with the latest news from us.</p>
+            <form>
+              <input type="text" placeholder="Enter Email" id="email" />
+              <button onclick="submitEmail()"><i class="bx bx-right-arrow-alt"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="contact">
+          <div>2011 - 2023 © Monstercat, All Rights Reserved</div>
+          <ul>
+            <li>
+              <a href="#"><i class="bx bxl-youtube"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-tiktok"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-spotify"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-apple"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-twitch"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-discord"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxs-baseball"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bx-music"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="autro">
+          <p>
+            We acknowledge with gratitude the traditional, ancestral and unceded land of the Coast
+            Salish peoples, including the territories of the Sḵwx̱wú7mesh (Squamish), Stó:lō and
+            Səl̓ílwətaʔ/Selilwitulh (Tsleil-Waututh) and xʷməθkʷəy̓əm (Musqueam) Nations, on which
+            Monstercat's Vancouver HQ stands.
+          </p>
+          <p>
+            We acknowledge the unceded and ancestral territories of the Gabrielino/Tongva peoples on
+            which our LA team live and work.
+          </p>
+        </div>
+      </section>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>
