@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+  --primary-red: hsl(0, 100%, 74%);
+  --primary-green: hsl(154, 59%, 51%);
+  --accent-blue: hsl(248, 32%, 49%);
+  --neutral-dark-blue: hsl(249, 10%, 26%);
+  --neutral-grayish-blue: hsl(246, 25%, 77%);
+
+  --font-size: 1.6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-size);
+  line-height: 1.4;
+  font-weight: 400;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  background-image: url(images/bg-intro-desktop.png);
+  background-color: var(--primary-red);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  max-width: 111.1rem;
+  gap: 4rem;
+}
+.main-left {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 50%;
+}
+.main-left h1 {
+  font-size: 4.8rem;
+  line-height: 1.1;
+}
+.main-left p {
+  line-height: 1.6;
+}
+
+.main-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 50%;
+}
+.right-text {
+  background-color: var(--accent-blue);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 1.8rem 0;
+}
+.right-text span {
+  font-weight: 600;
+}
+.form-content {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: white;
+  width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.form-content input {
+  border: 1px solid var(--neutral-grayish-blue);
+  border-radius: 5px;
+  width: 100%;
+  height: 5.4rem;
+  padding: 0 3rem;
+  margin-top: 2rem;
+  font-size: var(--font-size);
+  font-weight: 600;
+  caret-color: var(--accent-blue);
+}
+.form-content input:focus {
+  outline: none;
+  border-color: var(--neutral-dark-blue);
+}
+
+label {
+  color: var(--primary-red);
+  align-self: flex-end;
+  font-size: 1.1rem;
+  padding-top: 0.5rem;
+}
+
+.form-content input[type='submit'] {
+  border: 0;
+  background-color: var(--primary-green);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0px 5px 3px 0 rgba(70, 69, 69, 0.164);
+}
+.form-content input[type='submit']:hover {
+  filter: contrast(2);
+}
+
+form p {
+  padding-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--neutral-grayish-blue);
+  font-weight: 500;
+}
+form p a {
+  text-decoration: none;
+  color: var(--primary-red);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-content,
+.right-text {
+  border-radius: 10px;
+  box-shadow: 0px 8px 3px 0 rgba(70, 69, 69, 0.301);
+}
+
+.attribution {
+  background-color: var(--accent-blue);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+.attribution a {
+  text-decoration: 0;
+  color: var(--primary-green);
+}
+
+@media only screen and (max-width: 811px) {
+  .container {
+    background-image: url(images/bg-intro-mobile.png);
+  }
+
+  main {
+    flex-direction: column;
+    margin: 2.5rem;
+  }
+
+  .main-left,
+  .main-right {
+    width: 100%;
+  }
+  .main-left,
+  .right-text,
+  form p {
+    text-align: center;
+  }
+  .main-left h1 {
+    font-size: 2.4rem;
+  }
+}

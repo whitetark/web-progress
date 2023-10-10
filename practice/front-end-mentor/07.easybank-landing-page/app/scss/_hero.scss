@@ -1,0 +1,49 @@
+.hero-div {
+  background-color: $very-light-gray;
+}
+
+.hero {
+  @include flex-row;
+  align-items: center;
+  &-content {
+    @include flex-column;
+    flex: 2;
+    order: 1;
+    gap: 2rem;
+    padding: 10rem 0;
+    button {
+      @extend .gradient-button;
+      align-self: flex-start;
+    }
+  }
+  &-wrapper {
+    flex: 3;
+    order: 2;
+    background-image: url(../../images/bg-intro-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    img{
+      margin: -5em 0;
+    }
+  }
+  @include breakpoint-down('medium'){
+    flex-direction: column-reverse;
+    &-content{
+      text-align: center;
+      padding-top: 3rem;
+      button{
+        align-self: center;
+      }
+    }
+    &-wrapper{
+      background-image: url(../../images/bg-intro-mobile.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      img{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

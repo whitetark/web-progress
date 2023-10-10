@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+.dark {
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  --key-background-func: hsl(225, 21%, 49%);
+  --key-shadow-func: hsl(224, 28%, 35%);
+  --key-background-equal: hsl(6, 63%, 50%);
+  --key-shadow-secondary: hsl(6, 70%, 34%);
+  --key-background: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --text-very-dark: hsl(221, 14%, 31%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+.light {
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-keypad-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+  --key-background-func: hsl(185, 42%, 37%);
+  --key-shadow-func: hsl(185, 58%, 25%);
+  --key-background-equal: hsl(25, 98%, 40%);
+  --key-shadow-secondary: hsl(25, 99%, 27%);
+  --key-background: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+  --text-very-dark: hsl(60, 10%, 19%);
+  --text-white: hsl(0, 0%, 0%);
+}
+
+.purple {
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-keypad-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+  --key-background-func: hsl(281, 89%, 26%);
+  --key-shadow-func: hsl(285, 91%, 52%);
+  --key-background-equal: hsl(176, 100%, 44%);
+  --key-shadow-secondary: hsl(177, 92%, 70%);
+  --key-background: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+  --text-very-dark: hsl(52, 100%, 62%);
+  --text-white: hsl(52, 100%, 62%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--main-background);
+}
+
+main {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+  max-width: 111.1rem;
+}
+
+.calculator {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 2rem;
+}
+.calculator .headings {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.calculator .headings span {
+  color: var(--text-white);
+}
+.calculator .headings-logo {
+  font-size: 3rem;
+}
+.calculator .headings-theme {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.4rem;
+  gap: 2rem;
+}
+.calculator .headings-theme span {
+  padding-bottom: 0.7rem;
+}
+.calculator .headings-theme .theme-changer {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+.calculator .headings-theme .theme-changer span {
+  letter-spacing: 0.5rem;
+  padding-left: 1.2rem;
+}
+.calculator .headings-theme .theme-changer form {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  border-radius: 1.6rem;
+  background-color: var(--toggle-keypad-background);
+  padding: 0.6rem;
+}
+.calculator .headings-theme .theme-changer form input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+.calculator .headings-theme .theme-changer form input[type=radio]:checked {
+  background-color: var(--key-background-equal);
+}
+.calculator .screen {
+  width: 100%;
+  background-color: var(--screen-background);
+  border-radius: 10px;
+  padding: 3rem 2.6rem;
+}
+.calculator .screen form input {
+  all: unset;
+  font-size: 5.6rem;
+  color: var(--text-white);
+  width: 100%;
+  text-align: right;
+}
+.calculator .keyboard {
+  background-color: var(--toggle-keypad-background);
+  display: grid;
+  gap: 2.5rem;
+  padding: 3.2rem;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(6.2rem, 10rem));
+  grid-template-rows: repeat(5, 6.2rem);
+  grid-template-areas: "I7 I8 I9 Idel" "I4 I5 I6 Iplus" "I1 I2 I3 Iminus" "Idot I0 Islash Imult" "Ireset Ireset Iequal Iequal";
+  border-radius: 10px;
+}
+.calculator .keyboard button {
+  all: unset;
+  text-align: center;
+  cursor: pointer;
+  font-size: 3.9rem;
+  background-color: var(--key-background);
+  color: var(--text-very-dark);
+  border-radius: 10px;
+  --box-shadow: 0px 4px 1px;
+  box-shadow: var(--box-shadow) var(--key-shadow);
+}
+.calculator .keyboard button.func, .calculator .keyboard button.equal {
+  background-color: var(--key-background-func);
+  color: var(--text-white);
+  font-size: 2.4rem;
+}
+.calculator .keyboard button.func {
+  background-color: var(--key-background-func);
+  box-shadow: var(--box-shadow) var(--key-shadow-func);
+}
+.calculator .keyboard button.equal {
+  background-color: var(--key-background-equal);
+  box-shadow: var(--box-shadow) var(--key-shadow-secondary);
+}
+.calculator .keyboard button:hover {
+  -moz-filter: brightness(80%);
+  -ms-filter: brightness(80%);
+  filter: brightness(80%);
+}
+
+footer {
+  background-color: var(--screen-background);
+  color: var(--text-white);
+  text-align: center;
+  padding: 1.5rem;
+}
+footer a {
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+  color: var(--key-background-equal);
+}
+
+@media only screen and (max-width: 445px) {
+  .calculator {
+    padding: 0.7rem;
+  }
+  .calculator .screen form input {
+    font-size: 4rem;
+  }
+  .calculator .keyboard {
+    gap: 1.5rem;
+    padding: 2.5rem;
+  }
+  .calculator .keyboard button {
+    font-size: 3rem;
+  }
+}/*# sourceMappingURL=style.css.map */

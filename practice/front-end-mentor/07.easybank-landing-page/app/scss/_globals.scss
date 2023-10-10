@@ -1,0 +1,68 @@
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: $light-weight;
+  line-height: 1.3;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  &-thumb {
+    background-image: linear-gradient($lime-green, $bright-cyan);
+    border-radius: 20px;
+    &:hover {
+      background-color: $white;
+    }
+  }
+  &-track {
+    background-color: $very-light-gray;
+  }
+}
+
+.gradient-button {
+  color: $white;
+  background-image: linear-gradient(90deg, $lime-green, $bright-cyan);
+  font-weight: $regular-weight;
+  font-size: $font-sm;
+  padding: 1.3rem 3.2rem;
+  border-radius: 20px;
+  transition: 300ms ease-in-out;
+  &:hover{
+    filter: brightness(1.05);
+    transition: 300ms ease-in-out;
+  }
+}
+section {
+  max-width: 106rem;
+  margin: 0 auto;
+  &.main-container{
+    padding: 10rem 2rem;
+    gap: 3.6rem;
+    p{
+      font-size: $font-sm;
+    }
+  }
+  h2{
+    font-size: 3.6rem;
+  }
+}
+
+p{
+  color: $grayish-blue;
+}
+h1,h2,h3,h4{
+  color: $dark-blue;
+}
+h1{
+  font-size: $font-xlg;
+}
+h2{
+  font-size: $font-lg;
+}
+h3{
+  font-size: $font-med;
+}

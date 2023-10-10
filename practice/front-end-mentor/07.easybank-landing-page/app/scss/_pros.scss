@@ -1,0 +1,41 @@
+.pros-div{
+  background-color: $light-grayish-blue;
+}
+
+.pros {
+  @include flex-column;
+    h2{
+      font-size: 3.6rem;
+    }
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      &-item{
+        @include flex-column;
+        margin: 1.5rem;
+        gap: 3rem;
+        &-content{
+          @include flex-column;
+          gap: 2rem;
+          h3{
+          font-size: 2.4rem;
+          }
+          p{
+            font-size: $font-sm;
+          }
+        }
+      }
+      @include breakpoint-down('medium'){
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include breakpoint-down('small'){
+        grid-template-columns: repeat(1, 1fr);
+        &-item{
+          align-items: center;
+          &-content{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
