@@ -1,0 +1,60 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.preview {
+  @include flex-row;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 4rem;
+  border-radius: 20px;
+  background-color: $dark-red;
+  transition: background-color 0.3s ease-out;
+  #counter {
+    background-color: $light-red;
+    padding: 0.25rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  @include breakpoint-down(small) {
+    padding: 1rem 2rem;
+    #text {
+      display: none;
+    }
+  }
+
+  &:hover {
+    background-color: rgb(39, 0, 0);
+  }
+}
+
+.preview:disabled,
+.preview:active:disabled {
+  background-color: $border;
+  color: #575757;
+  cursor: not-allowed;
+  #counter {
+    background-color: #e4e3e3;
+  }
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

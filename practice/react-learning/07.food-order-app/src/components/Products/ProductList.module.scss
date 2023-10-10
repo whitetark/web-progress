@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.list {
+  @include flex-column;
+  gap: 2rem;
+  width: 85%;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  animation: meals-appear 1s ease-out forwards;
+
+  .divider {
+    border-top: 2px solid #dfdcdc;
+  }
+}
+
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

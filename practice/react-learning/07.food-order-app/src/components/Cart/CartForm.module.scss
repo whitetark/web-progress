@@ -1,0 +1,45 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.form {
+  @include flex-column;
+  gap: 1rem;
+  &-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    @include breakpoint-down('small') {
+      gap: 0.5rem;
+      grid-template-columns: 1fr;
+    }
+    &-control {
+      @include flex-column;
+      gap: 0.25rem;
+      label {
+        font-weight: $bold;
+      }
+      input {
+        border: 1px solid $border;
+        border-radius: 8px;
+        outline: none;
+        padding: 0.25rem 1rem;
+      }
+    }
+    &-error {
+      text-align: center;
+      color: $red;
+      font-weight: $bold;
+    }
+  }
+}
+
+.invalid {
+  input {
+    border: 1px solid #b40e0e;
+    background-color: #fddddd;
+    &:focus {
+      border-color: #ff8800;
+      background-color: #fbe8d2;
+    }
+  }
+}

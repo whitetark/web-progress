@@ -1,0 +1,12 @@
+.button {
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  align-self: flex-start;
+  background-color: rgb(58, 0, 58);
+  transition: background-color 0.2s ease-out;
+  color: white;
+}
+
+.button:hover {
+  background-color: rgb(92, 0, 92);
+}

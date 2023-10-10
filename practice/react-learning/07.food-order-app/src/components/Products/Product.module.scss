@@ -1,0 +1,66 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+$gap: 0.5rem;
+
+.product {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  &-description {
+    @include flex-column;
+    gap: $gap;
+    h4 {
+      font-weight: $bold;
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: $thin;
+      font-style: italic;
+    }
+    span {
+      font-weight: $supa-bold;
+      color: $orange;
+    }
+  }
+
+  &-actions {
+    @include flex-column;
+    gap: $gap + 0.5rem;
+    align-items: flex-end;
+    &-input {
+      @include flex-row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem;
+      label {
+        font-weight: $bold;
+      }
+
+      input {
+        min-width: 5rem;
+        width: 15%;
+        outline: none;
+        border: 1px solid $border;
+        border-radius: 4px;
+        padding: 0 0.5rem;
+      }
+    }
+    .red {
+      background-color: $red;
+      color: $white;
+      padding: 0.5rem 3rem;
+      transition: background-color 0.4s ease-out;
+      &:hover {
+        background-color: $dark-red;
+      }
+      &:disabled,
+      &:disabled:active {
+        background-color: $border;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
