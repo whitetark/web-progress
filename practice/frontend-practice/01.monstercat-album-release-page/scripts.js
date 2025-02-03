@@ -1,22 +1,22 @@
-let nav = document.getElementById('navigation')
-const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+let nav = document.getElementById('navigation');
+const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 function toggleMenu() {
-  nav.classList.toggle('active')
+  nav.classList.toggle('active');
 }
 
 function dropdownActive(button) {
-  button.parentElement.classList.toggle('dr-active')
+  button.parentElement.classList.toggle('dr-active');
 }
 
 function submitEmail() {
-  let input = document.getElementById('email')
+  let input = document.getElementById('email');
   if (!input.value.match(validRegex)) {
-    input.value = ''
-    input.placeholder = 'This is not an email'
+    input.value = '';
+    input.placeholder = 'This is not an email';
   } else {
-    input.placeholde = 'Email'
-    input.parentElement.reset()
+    input.placeholder = 'Email';
+    input.parentElement.reset();
   }
-  event.preventDefault()
+  event.preventDefault();
 }

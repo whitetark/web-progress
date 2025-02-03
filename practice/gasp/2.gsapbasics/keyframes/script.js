@@ -29,9 +29,10 @@ const init = () => {
   tl.to('.slime', {
     keyframes: {
       '10%': { scale: 0.7 },
-      '33%': { x: 300, scale: 1 },
-      '55%': { scale: 2, ease: 'sine.inOut' },
-      '83%': { x: 20, scale: 1 },
+      '33%': { x: 300, ease: 'sine' },
+      '55%': { scale: 2, ease: 'sine.in' },
+      '75%': { x: 20, ease: 'sine.inOut' },
+      '83%': { scale: 1, ease: 'sine.inOut' },
       '100%': { x: 400, scale: 0.7 },
     },
     duration: 3,
