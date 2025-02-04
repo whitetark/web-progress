@@ -1,17 +1,26 @@
-let timeline = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
+
+let timeline = gsap.timeline({
+  defaults: { duration: 0.5, delay: 0.25 },
+  scrollTrigger: {
+    trigger: '.main',
+    scrub: 1,
+    pin: true,
+    markers: true,
+    toggleActions: 'restant none none none',
+  },
+});
 
 timeline
   .to('.main', {
     backgroundColor: '#E2C91E',
-    duration: 2,
-    delay: 0.5,
+    duration: 1,
   })
   .to(
     '.figure',
     {
       borderRadius: '100%',
-      duration: 2,
-      delay: 0.5,
+      duration: 1,
     },
     0,
   )
@@ -19,8 +28,6 @@ timeline
     '#one',
     {
       rotation: -135,
-      duration: 1,
-      delay: 0.5,
     },
     0,
   )
@@ -28,8 +35,6 @@ timeline
     '#two',
     {
       rotation: 135,
-      duration: 1,
-      delay: 0.5,
     },
     0,
   )
@@ -37,8 +42,6 @@ timeline
     '#three',
     {
       rotation: 45,
-      duration: 1,
-      delay: 0.5,
     },
     0,
   )
@@ -46,8 +49,6 @@ timeline
     '.photo',
     {
       y: 50,
-      duration: 1,
-      delay: 0.5,
     },
     0,
   )
@@ -56,8 +57,6 @@ timeline
     {
       fontSize: 128,
       y: -(window.innerHeight / 2),
-      duration: 1,
-      delay: 0.5,
     },
     0,
   )
@@ -66,8 +65,6 @@ timeline
     {
       fontSize: 96,
       y: -200,
-      duration: 1,
-      delay: 0.5,
     },
     0,
   )
@@ -75,8 +72,6 @@ timeline
     '.text',
     {
       color: '#000000',
-      duration: 1,
-      delay: 0.5,
     },
     0,
   );
