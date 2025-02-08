@@ -1,0 +1,39 @@
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6em;
+  overflow-x: hidden;
+  font-family: Kanit, sans-serif;
+}
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  padding: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vw;
+  color: dodgerblue;
+  background-color: white;
+  border-bottom: 1px solid #333;
+}
+
+.small {
+  height: 25vh;
+}
+
+ul {
+  top: 0;
+  position: fixed;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  color: black;
+}

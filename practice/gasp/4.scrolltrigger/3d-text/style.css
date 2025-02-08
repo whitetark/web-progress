@@ -1,0 +1,81 @@
+* {
+  position: relative;
+}
+
+:root {
+  --headerSize: clamp(60px, 10vw, 100px);
+  --headerActiveBG: #444;
+  --headerActiveText: white;
+  --headerOffBG: #ddd;
+  --headerOffText: #aaa;
+}
+
+body {
+  margin: 0;
+  background: #f1f8ff;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: clamp(340px, 80%, 800px);
+  margin: auto;
+}
+
+.space {
+  height: 120vh;
+}
+
+.heading-3d-wrapper {
+  height: var(--headingSize);
+  width: 100%;
+  margin-top: 8vw;
+}
+
+.heading-3d {
+  margin: 0;
+  transform-origin: 50% 50% calc(var(--headerSize) / -2);
+  height: var(--headerSize);
+  transform-style: preserve-3d;
+}
+
+.heading-3d div {
+  width: 100%;
+  height: var(--headerSize);
+  text-align: center;
+  position: absolute;
+}
+
+.heading-3d div h2 {
+  text-transform: uppercase;
+  font-size: calc(var(--headerSize) / 2);
+  line-height: var(--headerSize);
+  margin: 0;
+  padding: 0;
+}
+
+/* Edit the top and bottom elements so that they fold back by
+   -- changing transform-origin
+   -- changing rotateX() 
+*/
+
+/* top */
+.heading-3d div:nth-child(1) {
+  transform-origin: 50% 100%;
+  transform: translateY(-100%) rotateX(90deg);
+  background: var(--headerOffBG);
+  color: var(--headerOffText);
+}
+
+/* front */
+.heading-3d div:nth-child(2) {
+  background: var(--headerActiveBG);
+  color: var(--headerActiveText);
+}
+
+/* bottom */
+.heading-3d div:nth-child(3) {
+  transform-origin: 50% 0%;
+  transform: translateY(100%) rotateX(-90deg);
+  background: var(--headerOffBG);
+  color: var(--headerOffText);
+}
