@@ -183,6 +183,7 @@ body {
   margin: 0 auto;
   padding: 1rem;
   height: 100vh;
+  position: relative;
 }
 
 .grid {
@@ -191,7 +192,14 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 
-  .menu {
+  li {
     cursor: pointer;
   }
+}
+
+.skip {
+  color: blue;
+  border: 1px solid blue;
+  padding: 1rem 2rem;
+  margin: 1rem;
 }
